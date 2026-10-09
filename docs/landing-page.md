@@ -34,10 +34,14 @@ First, you will need an external hard drive for this course.
 It is recommended you purchase one that is at least 500GB but you can technically get by with 250GB.
 Be careful about which hard drive you purchase. There are many sub-par digital storage manufacturers out there that should be avoided. Generally you will want to stick with known brands (such as Samsung, Western Digital/SanDisk, Seagate/LaCie, Kingston, Toshiba) but you will also want to consider the *type* of hard drive you get.
 
-Hard drives that are branded as "external" often have slower Read/Write speeds than drives meant for internal use. These drives also sometimes come with firmware that can cause permission issues when trying to access your virtual machines. 
+Hard drives that are branded as "external" often have slower Read/Write speeds than drives meant for internal use. These drives also sometimes come with firmware that can cause permission issues when trying to access your virtual machines. It may be better to purchase a standard internal SSD and a USB to SATA connector cable.
 
-Speak with your teacher in Week 1 if you are unsure but it is generally recommended that you get an SSD
 
+## Submitting Labs
+
+All the labs in this course (except for Lab 1 and Lab 5) will be submitted via a submission link in Blackboard. You will be submitting a document that contains screenshots showing proof of steps you have completed in the labs. Submissions for labs are "All or Nothing" - you must submit all screenshots to get the lab mark. If you are missing any screenshots you will receive a mark of 0 for the lab.
+
+Screenshots MUST be taken using a screenshot tool in your computer (the snipping tool is your best bet in Windows). Pictures of the screen taken with your phone will not be accepted. All screenshots must have a label either above or underneath describing what the screenshot is showing.
 
 
 ## Using your own laptop

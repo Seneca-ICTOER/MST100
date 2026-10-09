@@ -47,5 +47,8 @@ You will need the following commands to accomplish this lab:
 
 ![MST100 Lab 5 Directory Structure](/img/MST100Lab5Directories.png)
 
+## Investigation 2 and Lab 5 Sign Off
 
-### Part 1: Finding IP information on Server1
+Once you have created the directory structure above, log into Blackboard and navigate to the Lab 5 Submission page. You will complete lab 5 there.
+
+

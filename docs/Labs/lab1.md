@@ -20,11 +20,11 @@ This week's lab will cover the following:
 
 ## Lab 1 Notes
 
-Most of the work in MST100 will be done on 3 Virtual Machines. It is highly recommended that you install these virtual machines using the Seneca lab computers as that is the environment that this (and all other) labs have been written and tested in. If you have a powerful enough laptop, you can install VMWare Workstation onto it and install the VMs on it. This can be useful as you will be able to complete the lab work at home as well as on campus.
+Lab 1 is a preparation lab and should not take you long but it MUST be completed before you can begin Lab 2. 
 
-But a word of warning...
+If you have not already done so, please make sure you read through the entire [MST100 Welcome Page](https://seneca-ictoer.github.io/MST100/) so that you understand how this course is run.
 
-If you choose to use your own laptop for this course, you assume all responsibility for ensuring the stability of your system. Your teacher will not be able to help you if you run into problems with your laptop.
+Once you have done so, proceed with this lab.
 
 ## Objectives
 

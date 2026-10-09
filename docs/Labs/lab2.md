@@ -22,6 +22,8 @@ This week's lab will cover the following:
 
 The primary method to do the labs in MST100 is to use virtual machines running on VMware inside the Seneca PC Windows image. There will be a few times in this course where you will need to have two VMs turned on at once but for the most part it is best to make sure that you have only one turned on at a time so as to ensure the stability of your system. Even so, you may experience VM crashes or system lock ups from time to time as MS Windows and VMware are quite resource intensive.
 
+**Maybe make a note on backups??**
+
 ## Objectives
 
 By the end of this lab, you will be able to:

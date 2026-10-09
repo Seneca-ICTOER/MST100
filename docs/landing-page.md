@@ -22,7 +22,7 @@ This course is an introduction to administration and networking on Microsoft Ser
 
 ## Learning by Doing
 
-Learning effectively in this course will mean attending the weekly lectures and then applying the concepts from those lectures in the 9 labs the Practical Lab Assignment. It is highly advised that you use your lab time effectively. You should be able to complete all your labs and lab assignment during your weekly lab periods without the need to do much work done outside of class.
+Learning effectively in this course will mean attending the weekly lectures and then applying the concepts from those lectures in the 9 labs the Practical Lab Assignment. It is highly advised that you use your lab time effectively. If you use your lab time effectively, you should be able to complete all your labs and lab assignment during your weekly lab periods without the need to do much work done outside of class.
 
 
 ## How to run this course
@@ -39,24 +39,34 @@ Hard drives that are branded as "external" often have slower Read/Write speeds t
 
 ## Submitting Labs
 
-All the labs in this course (except for Lab 1 and Lab 5) will be submitted via a submission link in Blackboard. You will be submitting a document that contains screenshots showing proof of steps you have completed in the labs. Submissions for labs are "All or Nothing" - you must submit all screenshots to get the lab mark. If you are missing any screenshots you will receive a mark of 0 for the lab.
+All the labs in this course will be submitted via a submission link in Blackboard. Except for Lab 1 and Lab 5, you will be submitting a document that contains screenshots showing proof of steps you have completed in the labs. Submissions for labs are "All or Nothing" - you must submit all screenshots to get the lab mark. If you are missing any screenshots you will receive a mark of 0 for the lab.
 
-Screenshots MUST be taken using a screenshot tool in your computer (the snipping tool is your best bet in Windows). Pictures of the screen taken with your phone will not be accepted. All screenshots must have a label either above or underneath describing what the screenshot is showing.
+Screenshots MUST be taken using a screenshot tool in your computer (the snipping tool is your best bet in Windows) and should show which VM is being used for the screenshot. **Pictures of the screen taken with your phone will not be accepted**. All screenshots must have a label either above or underneath describing what the screenshot is showing.
 
 
 ## Using your own laptop
 
-Some of you may have completed OPS245 using your own laptop. Generally speaking, if you were able to complete OPS245 that way without any trouble, you should be able to do so in OPS345 as well. Again, do not use the same Debian host system that you used in OPS245. You will need a fresh install of Ubuntu to properly complete this course. Keep in mind that the CPU and RAM requirements in this course are more demanding than they were in OPS245. A laptop with 16GB of RAM and a CPU comparable to a 12th Gen i7-12700 or better should be fine but anything less and you are probably better off using the lab machines.
+You may be able to run this course on your own laptop but there are a few important factors to keep in mind.
 
-You can technically also use your laptop the same way as the lab machines are used - by plugging an external hard drive into them and booting to that drive via your BIOS. However, different laptop manufacturers treat their default BIOS settings differently and you may need to do some tinkering to get this working. But beware... messing with the BIOS can be dangerous and if you care about the default Windows OS that came with your laptop, you will want to be extra cautious, lest you accidentally break it.
+First, you will need a fairly beefy computer to do this course. Microsoft operating systems and the VMware virtualization software used to run them in this course are quite resource intensive. It is recommended that you have the following minimum specs:
 
-Ultimately this course has been designed and tested to work with the setup we have in the labs - by plugging an external hard drive into the lab machine, installing the Ubuntu host OS onto that hard drive, and booting to it through the lab machine BIOS menu. Using any other method is at the student's discretion. The teacher will not be able to help you with your own laptop.
+CPU: a 12th Gen i7-12700 or better
+RAM: 32GB or more
+Disk Space: 500GB or more
 
-YOU HAVE BEEN WARNED!
+You may be able to use something with lower specs but the further away from these minimums you go the more risk there will be for crashing and/or lock ups. YOU HAVE BEEN WARNED!
+
+You will also need to consider that virtualization may not be enabled on your computer by default. You may have to figure out how to enable this on your own. This can involve going into the BIOS settings of your computer which is not something you should do if you are not experienced/comfortable with it. The BIOS has a lot going on in it and several options and configurations cause serious problems if you don't know what you are doing.
+
+If you DO decide to use a laptop for the course work, make sure you stick with your laptop. Switching your VMs between your computer and the school computers will drastically increase the risk of your VMs crashing or, even worse, being rendered unusable.
+
+Ultimately this course has been designed and tested to work with the setup we have in the labs - by plugging a hard drive into the lab machine, installing your VMs to that hard drive, and running them from the hard drive using VMware on the Seneca lab computer. Using any other method is at the student's discretion. The teacher will not be able to help you with your own laptop and any damage you cause to it will be on you. 
+
+Again, **YOU HAVE BEEN WARNED!**
 
 ## Reference Sheet Policy
 
-You are allowed a refence sheet for the tests in this course.
+You are allowed a reference sheet for the 3 tests in this course.
 
 These reference sheets **MUST BE PHYSICAL**. They can be hand-written or typed up but they must be on a physical piece of paper. 
 Digital reference sheets are not acceptable.
@@ -68,9 +78,9 @@ You are allowed a two-sided sheet for the Test 3.
 
 | **Evaluation** | **Marks** |
 | -------------- | --------- |
-| Labs           | 16%       |
-| Assignment (2) | 30%       |
-| Quizzes        | 4%        |
-| Midterm Test   | 25%       |
-| Final Test     | 25%       |
-
+| Labs           | 25%       |
+| Assignment     | 25%       |
+| Quizzes        | 10%       |
+| Test 1         | 10%       |
+| Test 2         | 10%       |
+| Test 3         | 20%       |

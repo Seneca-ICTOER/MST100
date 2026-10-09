@@ -42,7 +42,7 @@ In this investigation, you will download both ISOs required to install all our v
 
 In this part, you will be downloading your Windows Server OS installation media by logging into your Seneca-based Azure account. You will also generate your personal serial keys for your copy of Server.
 
-1. Navigate to the Microsoft Azure site:  [portal.azure.com](portal.azure.com)
+1. Navigate to the Microsoft Azure site: [Microsoft Azure Portal](https://portal.azure.com)
 2. Use your Seneca e-mail address and password to login.
 3. Once on the main Azure page, look for the Search bar at the top of the page.
 4. In the Search bar, type: Education, then hit Enter.

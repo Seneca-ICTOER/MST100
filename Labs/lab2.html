@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Labs/lab2" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Lab 2 - Installing Virtual Machines | MST100 - Introduction to Microsoft Server</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://seneca-ictoer.github.io/MST100/Labs/lab2"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Lab 2 - Installing Virtual Machines | MST100 - Introduction to Microsoft Server"><meta data-rh="true" name="description" content="Installing 3 virtual machines that will be used for the rest of the course."><meta data-rh="true" property="og:description" content="Installing 3 virtual machines that will be used for the rest of the course."><link data-rh="true" rel="icon" href="/MST100/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://seneca-ictoer.github.io/MST100/Labs/lab2"><link data-rh="true" rel="alternate" href="https://seneca-ictoer.github.io/MST100/Labs/lab2" hreflang="en"><link data-rh="true" rel="alternate" href="https://seneca-ictoer.github.io/MST100/Labs/lab2" hreflang="x-default"><link rel="icon" href="/MST100/img/pwa/icon-512x512.png">
+<link rel="manifest" href="/MST100/manifest.json">
+<meta name="theme-color" content="#DA291C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#DA291C">
+<link rel="apple-touch-icon" href="/MST100/img/pwa/icon-192x192.png">
+<link rel="mask-icon" href="/MST100/img/pwa/icon-512x512.png" color="#DA291C">
+<meta name="msapplication-TileImage" content="/MST100/img/pwa/icon-512x512.png">
+<meta name="msapplication-TileColor" content="#DA291C">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/MST100/assets/css/styles.cba3e07b.css">
+<script src="/MST100/assets/js/runtime~main.c95226e7.js" defer="defer"></script>
+<script src="/MST100/assets/js/main.0bdd733d.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/MST100/img/logo.svg"><link rel="preload" as="image" href="/MST100/img/logo-dark.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><a class="navbar__brand" href="/MST100/"><div class="navbar__logo"><img src="/MST100/img/logo.svg" alt="Seneca Polytechnic" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/MST100/img/logo-dark.svg" alt="Seneca Polytechnic" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">MST100 - Introduction to Microsoft Server</b></a></div><div class="navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/MST100/">Welcome to MST100</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/MST100/weekly-schedule">Weekly Schedule</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/MST100/Labs/lab1">Labs</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab1">Lab 1 - Preparing for the course</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/MST100/Labs/lab2">Lab 2 - Installing Virtual Machines</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab3">Lab 3 - Configuring Windows Server</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab4">Lab 4 - Introduction to Windows Networking and Network Services</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab5">lab5</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab6">lab6</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab7">lab7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab8">lab8</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/MST100/Labs/lab9">lab9</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/MST100/practical-assignment">practical-assignment</a></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/MST100/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Labs</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Lab 2 - Installing Virtual Machines</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Lab 2: Installing Windows Server 2025 and Windows 11 Virtual Machines</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This week&#x27;s lab will cover the following:</p>
+<ul>
+<li>Accessing VMWare Workstation Pro</li>
+<li>Installing the following 3 Virtual Machines:<!-- -->
+<ul>
+<li>Server1: Windows Server 2025 Datacenter (with GUI)</li>
+<li>Server2: Windows Server 2025 Datacenter Core (without GUI)</li>
+<li>Client1: Windows 11 Education</li>
+</ul>
+</li>
+<li>Performing post-installation tasks on all 3 virtual machines</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lab-2-notes">Lab 2 Notes<a href="#lab-2-notes" class="hash-link" aria-label="Direct link to Lab 2 Notes" title="Direct link to Lab 2 Notes">​</a></h2>
+<p>The primary method to do the labs in MST100 is to use virtual machines running on VMware inside the Seneca PC Windows image. There will be a few times in this course where you will need to have two VMs turned on at once but for the most part it is best to make sure that you have only one turned on at a time so as to ensure the stability of your system. Even so, you may experience VM crashes or system lock ups from time to time as MS Windows and VMware are quite resource intensive.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="objectives">Objectives<a href="#objectives" class="hash-link" aria-label="Direct link to Objectives" title="Direct link to Objectives">​</a></h2>
+<p>By the end of this lab, you will be able to:</p>
+<ul>
+<li>use VMWare to install virtual machines</li>
+<li>install a GUI version of Windows Server 2025</li>
+<li>install a GUI-less version of Windows Server 2025</li>
+<li>install an Education version of Windows 11</li>
+<li>recognize the differences in these installations and the time/resources needed for each</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="investigation-1-installing-your-vms">Investigation 1: Installing your VMs<a href="#investigation-1-installing-your-vms" class="hash-link" aria-label="Direct link to Investigation 1: Installing your VMs" title="Direct link to Investigation 1: Installing your VMs">​</a></h2>
+<p>In this investigation, you will install all 3 virutual machines using VMWare Workstation Pro on a Seneca lab computer.</p>
+<ol>
+<li>Begin by logging into a Seneca lab computer and then plugging in your external hard drive (which should have your ISO files and Keys text file on it from Lab 1)</li>
+<li>Check to make sure your external hard drive is recognized by the computer by opening the File Explorer and navigating to your external hard drive.</li>
+<li>Double check that the directories you created in lab 1 are there.</li>
+<li>Open VMWare Workstation Pro from the desktop.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-1-1-installing-windows-server-2025-datacenter-gui">Part 1-1: Installing Windows Server 2025 Datacenter (GUI)<a href="#part-1-1-installing-windows-server-2025-datacenter-gui" class="hash-link" aria-label="Direct link to Part 1-1: Installing Windows Server 2025 Datacenter (GUI)" title="Direct link to Part 1-1: Installing Windows Server 2025 Datacenter (GUI)">​</a></h3>
+<p>In this part, you will install Windows Server 2025 Datacenter with a GUI.</p>
+<ol>
+<li>Click &quot;Create a New Virtual Machine&quot; on the Home tab in VMWare Workstation Pro.</li>
+<li>Select &quot;Typical&quot; and click &quot;Next&quot;.</li>
+<li>Select &quot;Installer disc image file (iso)&quot; and then click &quot;Browse&quot;.</li>
+<li>Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO.</li>
+<li>You should notice a message below the path to the ISO that says &quot;Windows Server 2025 detected. This operating system will use Easy Install&quot;. Click &quot;Next&quot;</li>
+<li>Enter your Windows Server 2025 product key (which should be in your &quot;Keys&quot; file on your external hard drive).</li>
+<li>For &quot;Version of Windows to Install&quot; leave the default (should be &quot;Windows Server 2025 Datacenter&quot;).</li>
+<li>For &quot;Full name&quot;, enter &quot;Administrator&quot;.</li>
+<li>For &quot;Password&quot;, enter &quot;P@ssw0rd&quot;.</li>
+<li>Do <strong>NOT</strong> check &quot;Log on automatically&quot;. Click &quot;Next&quot;.</li>
+<li>For &quot;Virtual Machine name&quot;, enter &quot;Server1&quot;.</li>
+<li>For &quot;Location&quot;, click &quot;Browse&quot; and navigate to and select the directory called &quot;Server1&quot; in your external hard drive and click &quot;OK&quot;. Confirm the path to your &quot;Server1&quot; directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click &quot;Next&quot;.</li>
+<li>Leave the disk size at 60 GB and select &quot;Store virtual disk as a single file&quot;. Click &quot;Next&quot;</li>
+<li>Click &quot;Customize Hardware&quot;.</li>
+<li>Change &quot;Memory&quot; to 4096 MB.</li>
+<li>Change &quot;Processors&quot; to 1 Processor and 4 cores per processor. Click &quot;Close&quot;. Click &quot;Finish&quot;.</li>
+<li>The virtual machine will launch and the installation will begin. You will be asked to put your product key in once again. Do so and click &quot;Next&quot;.<!-- -->
+<ul>
+<li>*to &quot;paste&quot; into the VM, click inside the Product Key box so that the cursor is seen inside it, then click &quot;Edit&quot; in VMWare and select &quot;Paste&quot;.</li>
+</ul>
+</li>
+<li>From here, most of the installation will be automatic. The VM will restart several times during the installation.</li>
+<li>Eventually you will land on the Windows Server 2025 desktop and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click &quot;Yes&quot; and your VM will reboot.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-1-2-windows-server-2025-gui-post-installation-tasks">Part 1-2: Windows Server 2025 GUI Post-Installation Tasks<a href="#part-1-2-windows-server-2025-gui-post-installation-tasks" class="hash-link" aria-label="Direct link to Part 1-2: Windows Server 2025 GUI Post-Installation Tasks" title="Direct link to Part 1-2: Windows Server 2025 GUI Post-Installation Tasks">​</a></h3>
+<p>Now that our Server1 is installed, there are a few things we need to do to prepare it for our labs. We are going to ensure our Time Zone is correct and we are going to name our system appropriately. Then we are going to make sure our system is completely updated. FInally, we will confirm internet connectivity and download a better web browser.</p>
+<ol>
+<li>Log into your Server1. To use Ctrl+Alt+Del in your VM, click &quot;VM&quot; in VMware and select &quot;Send Ctrl+Alt+Del&quot;.</li>
+<li>You should be met with the Server Manager Dashboard. If not, click on the Server Manager icon at the bottom of the screen.</li>
+<li>A pop up will appear asking you to &quot;Try Windows Admin Center/ Azure Arc&quot;. Click &quot;Don&#x27;t show me this message again&quot; and close the pop-up.</li>
+<li>Click &quot;Local Server&quot; on the left side of the screen.</li>
+<li>In the &quot;Properties&quot; window, look for &quot;Time Zone&quot; and make sure it is set to &quot;UTC -05:00 Eastern Time&quot;. If it is something else, change it to our time zone.</li>
+<li>Next, click on the semi-randomized name next to &quot;Computer Name&quot;. Then click &quot;Change&quot;.</li>
+<li>Change the computer name to &quot;S1-SenecaID&quot; (for example, my Seneca ID is hheim so my Server1 computer name would be &quot;S1-hheim&quot;).</li>
+<li>Leave the default Workgroup selected and click &quot;OK&quot;. A message will pop up saying the computer name will not change until the system is restarted. Click &quot;OK&quot;.</li>
+<li>Close the Computer Name window and another message will pop up asking if you want to restart the computer now. Click &quot;Restart Later&quot;.</li>
+<li>Next, find &quot;Windows Update&quot; in the &quot;Properties&quot; window and click the blue text beside it. Click the blue &quot;Check for updates&quot; button.</li>
+<li>Windows Server will now download and install all necessary updates.</li>
+<li>While they are downloading, scroll down and click on &quot;Advanced Options&quot;.</li>
+<li>Turn the &quot;Receive updates to other Microsoft products&quot; toggle from <strong>Off</strong> to <strong>On</strong>.</li>
+<li>Click &quot;Windows Update&quot; at the top of the screen to get back to the main Updates window.</li>
+<li>You will likely need to wait a little while for the updates to finish downloading and installing. Eventually, all the updates listed will say &quot;Pending restart&quot;. Once you see this, click the blue &quot;Restart now&quot; button.</li>
+<li>Server1 will reboot and install updates. This will likely take a while and it will likely reboot a few times but just let it do its thing. Do not turn off the VM while it is updating. If your VM freezes during the updates, check with you teacher before moving forward.</li>
+<li>When you are met with the login screen, log in and return to the Updates window.</li>
+<li>Click the blue &quot;Check for updates&quot; button. If any remaining updates are available they will install. Repeat this cycle until you are met with a &quot;You&#x27;re up to date&quot; message.</li>
+<li>Next, we are going to confirm internet connectivity and download a different web browser that MS Edge.</li>
+<li>Open MS Edge (the icon will be at the bottom of your screen).</li>
+<li>Go through the first-run questions (just say no to everything).</li>
+<li>Go to the Mozilla Firefox website: <a href="http://www.firefox.com" target="_blank" rel="noopener noreferrer">www.firefox.com</a></li>
+<li>Download Firefox and install it.</li>
+<li>Once it is installed, open Firefox and go to google.com to make sure everything is working.</li>
+<li>Shut down Server1.</li>
+</ol>
+<p><strong>Note:</strong> During installations it is a good idea to only have one VM (the one you are installing) powered on at a time.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-2-1-installing-windows-server-2025-core-no-gui">Part 2-1: Installing Windows Server 2025 Core (No GUI)<a href="#part-2-1-installing-windows-server-2025-core-no-gui" class="hash-link" aria-label="Direct link to Part 2-1: Installing Windows Server 2025 Core (No GUI)" title="Direct link to Part 2-1: Installing Windows Server 2025 Core (No GUI)">​</a></h3>
+<p>Now we are going to install our second server, Server2. This installation will be very similar to the first, although the server will look quite different when we are done.</p>
+<ol>
+<li>Click &quot;Create a New Virtual Machine&quot; on the Home tab in VMWare Workstation Pro.</li>
+<li>Select &quot;Typical&quot; and click &quot;Next&quot;.</li>
+<li>Select &quot;Installer disc image file (iso)&quot; and then click &quot;Browse&quot;.</li>
+<li>Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO.</li>
+<li>You should notice a message below the path to the ISO that says &quot;Windows Server 2025 detected. This operating system will use Easy Install&quot;. Click &quot;Next&quot;</li>
+<li>Enter your Windows Server 2025 product key (which should be in your &quot;Keys&quot; file on your external hard drive).</li>
+<li>For &quot;Version of Windows to Install&quot; change it to &quot;Windows Server 2025 Datacenter Core&quot;. <strong>VERY IMPORTANT!!</strong></li>
+<li>For &quot;Full name&quot;, enter &quot;Administrator&quot;.</li>
+<li>For &quot;Password&quot;, enter &quot;P@ssw0rd&quot;.</li>
+<li>Do <strong>NOT</strong> check &quot;Log on automatically&quot;. Click &quot;Next&quot;.</li>
+<li>For &quot;Virtual Machine name&quot;, enter &quot;Server2&quot;.</li>
+<li>For &quot;Location&quot;, click &quot;Browse&quot; and navigate to and select the directory called &quot;Server2&quot; in your external hard drive and click &quot;OK&quot;. Confirm the path to your &quot;Server2&quot; directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click &quot;Next&quot;.</li>
+<li>Leave the disk size at 60 GB and select &quot;Store virtual disk as a single file&quot;. Click &quot;Next&quot;</li>
+<li>Click &quot;Customize Hardware&quot;.</li>
+<li>Change &quot;Memory&quot; to 4096 MB.</li>
+<li>Change &quot;Processors&quot; to 1 Processor and 4 cores per processor. Click &quot;Close&quot;. Click &quot;Finish&quot;.</li>
+<li>The virtual machine will launch and the installation will begin. You will be asked to put your product key in once again. Do so and click &quot;Next&quot;.<!-- -->
+<ul>
+<li>*to &quot;paste&quot; into the VM, click inside the Product Key box so that the cursor is seen inside it, then click &quot;Edit&quot; in VMWare and select &quot;Paste&quot;.</li>
+</ul>
+</li>
+<li>From here, most of the installation will be automatic. The VM will restart several times during the installation.</li>
+<li>Eventually you will land on the Windows Server 2025 Core config screen and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click &quot;Yes&quot; and your VM will reboot.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-2-2-windows-server-2025-core-post-installation-tasks">Part 2-2: Windows Server 2025 Core Post-Installation Tasks<a href="#part-2-2-windows-server-2025-core-post-installation-tasks" class="hash-link" aria-label="Direct link to Part 2-2: Windows Server 2025 Core Post-Installation Tasks" title="Direct link to Part 2-2: Windows Server 2025 Core Post-Installation Tasks">​</a></h3>
+<p>Now that Server2 is installed we are going to perform the same post-installation tasks that we did on Server1. However, because this is the &quot;Core&quot; version of Windows Server 2025 there is no GUI and so our configurations will be done a little differently.</p>
+<ol>
+<li>Begin by logging into Server2 (again, click &quot;VM&quot; in VMWare and then select &quot;Send Ctrl+Alt+Del&quot;).</li>
+<li>Put in your password and you will be brought to the SConfig screen. SConfig is a module that allows us to make basic system configurations without the need for commands or a GUI.</li>
+<li>Find the option for &quot;Date and Time&quot;, enter the corresponding number, and press &quot;Enter&quot;. The Date and Time window should appear.</li>
+<li>Check to ensure that UTC -05:00 Eastern Time is selected. If not change it to that time zone. Press &quot;OK&quot;.</li>
+<li>Next we will change the computer name. Find the option for &quot;Computer Name&quot;, enter the corresponding number, and press &quot;Enter&quot;.</li>
+<li>Type in your computer name as &quot;S2-SenecaID&quot; (for example, my Seneca ID is hheim so my Server2 computer name would be &quot;S2-hheim&quot;).</li>
+<li>The system will ask you to restart. Select &quot;(Y)es&quot;.</li>
+<li>Once the system reboots and you have logged back in to the SConfig screen, find the option for &quot;Update Settings&quot;, enter the corresponding number, and press &quot;Enter&quot;.</li>
+<li>On the &quot;Update Settings&quot; screen, enter &quot;5&quot; (Opt-in to Microsoft Update) and press &quot;Enter&quot;. Press &quot;Y&quot; and press &quot;Enter&quot; on the next screen to confirm. Press &quot;Enter&quot; to continue.</li>
+<li>Back on the SConfig screen, find the option for &quot;Install Updates&quot;, enter the corresponding number, and press &quot;Enter&quot;.</li>
+<li>Enter &quot;1&quot; (All quality updates) and press &quot;Enter&quot;.</li>
+<li>Windows Server will search for applicable updates and eventually it will ask you which updates to install. Enter &quot;A&quot; (All Updates) and press &quot;Enter&quot;.</li>
+<li>Windows Server will not download and install its updates. This may take a while.</li>
+<li>Once the installations are complete, the system will ask you to restart. Enter &quot;Y&quot; (yes) and press &quot;Enter&quot;.</li>
+<li>Server2 will restart. It may continue updating and restart again.</li>
+<li>When Server2 comes back up, log in and go back into the &quot;Install Updates&quot; option. Once again, Enter &quot;1&quot; and press &quot;Enter&quot;.</li>
+<li>If there are any remaining updates, enter &quot;Y&quot; and press &quot;Enter&quot;. Then, reboot if asked to.</li>
+<li>Repeat these steps until searching for all quality updates results in the &quot;There are no applicable updates&quot; message. Press &quot;Enter&quot; to return to the SConfig screen.</li>
+<li>Shut down Server2.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-3-1-installing-windows-11-education">Part 3-1: Installing Windows 11 Education<a href="#part-3-1-installing-windows-11-education" class="hash-link" aria-label="Direct link to Part 3-1: Installing Windows 11 Education" title="Direct link to Part 3-1: Installing Windows 11 Education">​</a></h3>
+<p>In this part we are going to install our Client1 system which will be running Windows 11 Education. Unfortunately, Windows 11 does not have an Easy Install feature in VMWare so this installation will be a little more involved.</p>
+<ol>
+<li>Click &quot;Create a New Virtual Machine&quot; on the Home tab in VMWare Workstation Pro.</li>
+<li>Select &quot;Typical&quot; and click &quot;Next&quot;.</li>
+<li>Select &quot;Installer disc image file (iso)&quot; and then click &quot;Browse&quot;.</li>
+<li>Navigate to the ISOs directory on your external hard drive and open the Windows 11 ISO.</li>
+<li>You should notice a message below the path to the ISO that says &quot;Windows 11 x64 detected. Click &quot;Next&quot;</li>
+<li>For &quot;Virtual Machine name&quot;, enter &quot;Client1&quot;.</li>
+<li>For &quot;Location&quot;, click &quot;Browse&quot; and navigate to and select the directory called &quot;Client1&quot; in your external hard drive and click &quot;OK&quot;. Confirm the path to your &quot;Client1&quot; directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click &quot;Next&quot;.</li>
+<li>Windows 11 uses TPM hardware to encrypt certain important files. VMware Worksation adds the TPM module automatically as long as you select the right options:</li>
+</ol>
+<ul>
+<li>Choose Encryption Type: Only the files needed to support a TPM are encrypted.</li>
+<li>Password: Your normal VM password.</li>
+</ul>
+<ol start="9">
+<li>Click &quot;Next&quot;.</li>
+<li>Leave the disk size at 64 GB and select &quot;Store virtual disk as a single file&quot;. Click &quot;Next&quot;</li>
+<li>Click &quot;Customize Hardware&quot;.</li>
+<li>Change &quot;Processors&quot; to 1 Processor and 4 cores per processor. Click &quot;Close&quot;. Click &quot;Finish&quot;.</li>
+<li>When the VM starts, pay close attention to the black screen. As soon as you see the &quot;Press any key...&quot; message, click with your mouse into the VM and press the space bar. Failure to do so will result in the VM not booting to its installer and you will have to begin again.</li>
+<li>On the &quot;language setting&quot; screen, use the default selections and click &quot;Next&quot;.</li>
+<li>On the &quot;keyboard setting&quot; screen, use the default selections and click &quot;Next&quot;.</li>
+<li>On the &quot;setup option&quot; screen, select &quot;Install Windows 11&quot;, check the &quot;I agree everything...&quot; box and click &quot;Next&quot;.</li>
+<li>On the next screen, enter your Product Key for Windows 11 (this will be a different key than the Windows Server key) and click &quot;Next&quot;.</li>
+<li>Accept the license terms on the next screen.</li>
+<li>On the &quot;location to install&quot; screen, select the only available option and click &quot;Next&quot;.</li>
+<li>On the &quot;Ready to install&quot; screen, click &quot;Install&quot;.</li>
+<li>Windows 11 will now install. It will reboot and take some time before you arrive at the next input screen.</li>
+<li>When you regain control you will be on the &quot;country or region screen&quot;. Select &quot;Canada&quot; and click &quot;Yes&quot;.</li>
+<li>On the &quot;keyboard layout&quot; screen, leave the default (&quot;US&quot;) and click &quot;Yes&quot;.</li>
+<li>Skip a second keyboard layout.</li>
+<li>Windows will now check for updates and install them as necessary.</li>
+<li>The next screen you see will be the &quot;Sign in&quot; screen. Click &quot;Sign-in options&quot; and then click &quot;Domain join instead&quot;.</li>
+<li>For your name, use your SenecaID (ex. hheim) and click &quot;Next&quot;.</li>
+<li>For your password, use &quot;P@ssw0rd&quot; and click &quot;Next&quot;.</li>
+<li>Next, fill out 3 security questions, clicking &quot;Next&quot; along the way.</li>
+<li>Select &quot;No&quot;, &quot;No&quot;, &quot;Required Only&quot;, &quot;No&quot;, &quot;No&quot; on the next 5 screens.</li>
+<li>Windows will then do some more updates. This may take some time and the system may reboot.</li>
+<li>When it is done with updating, you will land on the Windows 11 desktop.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="part-3-2-post-installation-tasks-for-windows-11">Part 3-2: Post-installation Tasks for Windows 11<a href="#part-3-2-post-installation-tasks-for-windows-11" class="hash-link" aria-label="Direct link to Part 3-2: Post-installation Tasks for Windows 11" title="Direct link to Part 3-2: Post-installation Tasks for Windows 11">​</a></h3>
+<p>Now that our Client1 is installed, there are a few things we need to do to prepare it for our labs similar to what we did on Server1 and Server2.</p>
+<p>We will begin with the basics - time zone and computer name.</p>
+<ol>
+<li>Right-click on the time in the bottom-right corner of the Windows 11 VM and left-click &quot;Adjust date and time&quot;.</li>
+<li>Make sure the time zone is set to UTC -05:00 Eastern Time.</li>
+<li>Click the Windows icon at the bottom of the screen (4 blue squares), type &quot;Computer Name&quot;, and then click on &quot;View your PC name&quot;.</li>
+<li>Click &quot;Rename this PC&quot; and give it the name &quot;C1-SenecaID&quot; (for example, my Seneca ID is hheim so my Client1 computer name would be &quot;C1-hheim&quot;).</li>
+<li>You will be asked if you want to restart the computer. Restart it.</li>
+<li>When the computer comes back up, log in and click on the Windows icon at the bottom of the screen (4 blue squares). Type &quot;updates&quot; and click &quot;Check for Updates&quot;.</li>
+<li>Click the blue &quot;Check for Updates&quot; button in the Windows Update window.</li>
+<li>While they are downloading , scroll down and click on &quot;Advanced Options&quot;.</li>
+<li>Turn the &quot;Receive updates to other Microsoft products&quot; toggle from <strong>Off</strong> to <strong>On</strong>.</li>
+<li>Click &quot;Windows Update&quot; at the top of the screen to get back to the main Updates window.</li>
+<li>Like on Server1, get your Client1 fully updated. This may require some time and reboots but keep updating until you are met with the &quot;You&#x27;re up to date&quot; message.</li>
+</ol>
+<p>Now that your system is fully up to date, there is one more thing we have to do. Recall that with Server1 and Server2, something called VMWare tools was automatically installed when the initial installation was complete. This will not happen on Windows 11. We will have to install it manually.</p>
+<ol start="13">
+<li>You should notice a beige bar at the bottom of your Client1 VM with a &quot;Install Tools&quot; button. Click that button. (If you don&#x27;t see the beige bar or the button, click on &quot;VM&quot; in VMWare and then click on &quot;Install VMWare Tools&quot;).</li>
+<li>Wait a few seconds and you should see a pop up in the bottom right corner of your screen that says &quot;DVD Drive (D:) VMWare Tools&quot;. Click this pop up.</li>
+<li>A new window will pop up with a &quot;Run setup.exe&quot; button. Click this button. Click &quot;Yes&quot; when the VMware installation launcher window pops up.</li>
+<li>The VMware tools installer will start. Click &quot;Next&quot;. Select &quot;Typical&quot; and click &quot;Next&quot;. Click &quot;Install&quot;. Click &quot;Finish&quot; when the installation is complete and then restart Client1.</li>
+<li>Log back into Windows and install Firefox the same way you did with Server1.</li>
+<li>Shut down Client1.</li>
+</ol>
+<p>Congratulations! You now have three fully functioning virtual machines that you will be using for the rest of the course.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lab-2-sign-off">Lab 2 Sign Off<a href="#lab-2-sign-off" class="hash-link" aria-label="Direct link to Lab 2 Sign Off" title="Direct link to Lab 2 Sign Off">​</a></h2>
+<p>Take the following 3 screenshots:</p>
+<ul>
+<li>Log into Server1. Go into the Server Manager on Server1, click on &quot;Local Server&quot;, and take a screenshot of the entire &quot;Properties&quot; window.</li>
+<li>Log into Server2. Take a screenshot of the &quot;Welcome to Windows Server 2025 Datacenter&quot; screen.</li>
+<li>Log into Client1. Go into the Windows Update window and take a screenshot that shows the &quot;You&#x27;re up to date&quot; message.</li>
+</ul>
+<p>Put all 3 of these screenshots into a single text document and upload it to the Lab 2 Submission page in Blackboard.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/catherine-leung/OERTemplate/tree/main/docs/Labs/lab2.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/MST100/Labs/lab1"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Lab 1 - Preparing for the course</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/MST100/Labs/lab3"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Lab 3 - Configuring Windows Server</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#lab-2-notes" class="table-of-contents__link toc-highlight">Lab 2 Notes</a></li><li><a href="#objectives" class="table-of-contents__link toc-highlight">Objectives</a></li><li><a href="#investigation-1-installing-your-vms" class="table-of-contents__link toc-highlight">Investigation 1: Installing your VMs</a><ul><li><a href="#part-1-1-installing-windows-server-2025-datacenter-gui" class="table-of-contents__link toc-highlight">Part 1-1: Installing Windows Server 2025 Datacenter (GUI)</a></li><li><a href="#part-1-2-windows-server-2025-gui-post-installation-tasks" class="table-of-contents__link toc-highlight">Part 1-2: Windows Server 2025 GUI Post-Installation Tasks</a></li><li><a href="#part-2-1-installing-windows-server-2025-core-no-gui" class="table-of-contents__link toc-highlight">Part 2-1: Installing Windows Server 2025 Core (No GUI)</a></li><li><a href="#part-2-2-windows-server-2025-core-post-installation-tasks" class="table-of-contents__link toc-highlight">Part 2-2: Windows Server 2025 Core Post-Installation Tasks</a></li><li><a href="#part-3-1-installing-windows-11-education" class="table-of-contents__link toc-highlight">Part 3-1: Installing Windows 11 Education</a></li><li><a href="#part-3-2-post-installation-tasks-for-windows-11" class="table-of-contents__link toc-highlight">Part 3-2: Post-installation Tasks for Windows 11</a></li></ul></li><li><a href="#lab-2-sign-off" class="table-of-contents__link toc-highlight">Lab 2 Sign Off</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">MST100 - Introduction to Microsoft Server</div><ul class="footer__items clean-list"><li class="footer__item"><a href="#" id="pwa-button" class="footer__link-item" hidden>Install as an App</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Hans Heim.</div></div></div></footer></div>
+</body>
+</html>

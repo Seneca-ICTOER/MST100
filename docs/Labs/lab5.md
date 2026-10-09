@@ -45,7 +45,7 @@ You will need the following commands to accomplish this lab:
 5. You will now create the following directory structure:
 (Replace "SenecaID" with your Seneca ID)
 
-
+![MST100 Lab 5 Directory Structure](/img/MST100Lab5Directories.png)
 
 
 ### Part 1: Finding IP information on Server1

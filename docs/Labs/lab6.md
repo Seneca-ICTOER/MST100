@@ -5,7 +5,7 @@ sidebar_position: 6
 description: Using Powershell Commands.
 ---
 
-# Lab 5: Introduction to Windows Powershell
+# Lab 6: Introduction to Windows Powershell
 
 ## Overview
 
@@ -17,7 +17,7 @@ This week's lab will cover the following:
 - Powershell profiles
 
 
-## Lab 5 Notes
+## Lab 6 Notes
 
 Windows PowerShell is an updated, more powerful version of the command line. It is essentially a combination of a Windows Command Line and a scripting environment rolled into one. It can help with repetitive tasks, processes acting on many files at once, automating and scheduling tasks, and configuring Windows components and services. 
 
@@ -49,7 +49,7 @@ In lab 4, we changed Server1's IP address and network settings so that it could 
 
 ## Investigation 1: Customizing a Shortcut to Point to a Home Directory
 
-In this exercise we will configure the PowerShell Console to open in a directory called “MyScripts.” We will be doing everything on Server1.
+In this exercise we will configure the Powershell Console to open in a directory called “MyScripts.” We will be doing everything on Server1.
 
 1. To open Powershell, type Powershell from the Run command, or click the Powershell icon on the task bar.
 2. First, let's create our new directory. Enter the following command:
@@ -122,17 +122,69 @@ Scroll through the output. Notice the part where it mentions downloading and ins
 Our system may not be fully updated with all available CMDLETs and associated help files. Let's take care of that now.
 
 1. Close the Powershell window
+2. Right-click your Powershell shortcut on the desktop and click "Run as administrator"
+3. Now enter the following into Powershell:
+```bash
+Update-Help
+```
+Powershell will likely have a lot to update so be patient and let it do its thing. You may get an error at the end of the update mentioning "UI culture(s)". If that is the only error you get, you can safely ignore it.
 
-First, let's update our help command so that it includes everything.
+Now that our Powershell help files are up to date let's take a look at a few.
 
 1. In Powershell, enter:
 ```bash
-
-
-1. To get information about a specific cmdlet, in this case Get-ChildItem, enter:
-```bash
 Get-Help Get-Childitem
 ```
-The output will display 
+The output will display syntax usage, a description, and related information for the command. The "Get-Help" CMDLET is a useful tool when you are getting started with a CMDLET you haven't used yet.
+
+2. You can also use this CMDLET with aliases. Try:
+```bash
+Get-Help dir
+```
+Notice that the output of this command shows you the same thing as when we ran "Get-Help" with "Get-Childitem". That is because "dir" is an alias of "Get-Childitem". We will come back to aliases later in this lab.
+
+3. Next, try:
+```bash
+Get-Help Get-Childitem -Full
+```
+This outputs a MUCH more detailed help page for the CMDLET. If you look around in it you will also find that it lists the built-in aliases for the CMDLET in the "NOTES" section (in this case "ls", "dir" and "gci"). This is useful to remember for longer CMDLETS.
+
+4. You can also get some examples of the CMDLET being used with:
+```bash
+Get-Help Get-Childitem -Examples
+```
+These are included in the output when using the "-Full" option as well but this option gives you less to scroll through.
+
+5. Let's try one more:
+```bash
+Get-Help Get-Childitem -Online
+```
+Your default web browser should open and bring you to the official Microsoft page for that CMDLET.
+
+6. In the next section you will be using CMDLETs to manage services on Server1. Use "Get-Help" to learn about the the CMDLETs you will be using:
+```bash
+Get-Help Get-Service
+Get-Help Start-Service
+Get-Help Stop-Service
+```
+
+### Part 2: Using CMDLETs to Start and Stop Services
+
+There are several CMDLETs associates with the "Service" noun:
+- Get-Service
+- New-Service
+- Restart-Service
+- Set-Service
+- Start-Service
+- Stop-Service
+- Suspend-Service
+
+1. We are going to use a few of these with a simple service but first let's take a look at the services available on our computer with:
+```bash
+get-service
+```
+
+You will see a list of all the services available on Server1 and their status.
+
 
 

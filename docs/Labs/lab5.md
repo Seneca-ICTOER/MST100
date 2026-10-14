@@ -43,7 +43,6 @@ You will need the following commands to accomplish this lab:
 3. The command prompt will open and you should be placed in the C:\Users\Administrator\ directory.
 4. Navigate to the root directory of the C: drive. 
 5. You will now create the following directory structure:
-(Replace "SenecaID" with your Seneca ID)
 
 ![MST100 Lab 5 Directory Structure](/img/MST100Lab5Directories.png)
 

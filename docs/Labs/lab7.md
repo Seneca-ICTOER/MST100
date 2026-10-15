@@ -112,6 +112,8 @@ Start-PSAdmin
 ```
 A new PowerShell window should appear.
 
+**Screenshot 3: Take a screenshot showing what happens when you run "Start-PSAdmin".**
+
 Now let's try something with a bit of utility. We are going to add a multi-line function called "Get-SmallFiles". This function has a user-defined variable called "$size". This function displays all the files that are smaller than the user-defined variable and excludes directories.
 
 5.  At the PS prompt, enter:
@@ -138,6 +140,8 @@ Get-SmallFiles -Size 50
 ```
 Notice the difference in output. Your function is only returning the empty files because they are smaller than the specified size. 
 
+**Screenshot 4: Take a screenshot showing the output of "Get-SmallFiles -Size 50".**
+
 ## Investigation 3: Updating Profile with Modules and Functions
 
 The problem with the modules and functions we've added and used in this lab is that they disappear when we close our PowerShell session. However, just like an Alias, we can put these into our Profile so that they are available whenever we open a new session.
@@ -161,6 +165,36 @@ function Get-SmallFiles {
 ```
 *Note - Unlike when you first created the "Get-SmallFiles" function, the tab spacing will not be done automatically for you in the "$Profile" file. For clarity, the first line has 0 tabs, the second and third line have 1 tab, the fourth line has 2 tabs, the fifth line has 1 tab, and the last line has 0 tabs.*
 
+**Screenshot 5: Take a screenshot showing the contents of your "$Profile" file.**
+
+3. Save your file and close it. Also, close your PowerShell window.
+
+4. Open a new PowerShell window and test to make sure your module import and two functions are working.
+
+## Investigation 4: Introduction to Scripting
+
+Scripting is an integral part of being any kind of administrator. Scripts will make your life easier and will allow you to automate many tasks and process all sorts of system and network based information.
+
+That said, the idea of scripting and how it is used in practice is entirely dependant on who is using it and all kinds of other factors surrounding your local and network environment, security policies, goals of your company, and just so much more. 
+
+It is a wide and deep ocean of which PowerShell is only a small part. It is unlikely that you will become a scripting expert of any kind doing solely what is taught to you in this course or any other courses you take.
+
+You will not learn all that much from slides and lectures.
+You need to actually *do* scripting.
+
+In this course/lab we are going to just barely scratch the surface of PowerShell scripting. This may seem daunting (and it is) but you will come to better understand scripting and how to effectively write and use scripts the more your write and use scripts.
+
+And remember, being bad at something is just the first step towards being kinda ok at something.
+
+### Part 1: PowerShell ISE
+
+Before we actually get into scripting, you should be introduced to PowerShell ISE (Integrated Scripting Environment). ISE is basically a text editor and PowerShell terminal in one application that has many useful features and tools for scripting and testing of scripts. 
+
+Let's open it up.
+
+1. Click the Windows icon and type "PowerShell".
+2. Click on "Windows PowerShell ISE".
+The application will open and it will look similar to a standard PowerShell terminal but you will notice many other buttons and tools available. 
 
 
 

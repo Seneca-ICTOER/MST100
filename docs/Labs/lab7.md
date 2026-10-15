@@ -171,7 +171,7 @@ function Get-SmallFiles {
 
 4. Open a new PowerShell window and test to make sure your module import and two functions are working.
 
-## Investigation 4: Introduction to Scripting
+## Investigation 4: Introduction to PowerShell Scripting
 
 Scripting is an integral part of being any kind of administrator. Scripts will make your life easier and will allow you to automate many tasks and process all sorts of system and network based information.
 
@@ -206,6 +206,20 @@ cd c:\MyScripts
 ```
 Notice that as you do so, PowerShell ISE will give you an auto-fill option for your directory. This is called "Intellisense" and it will recommend how to finish your commands. You can hit the "Tab" key on your keyboard to accept a suggestion.
 
+4. Now let's open the Script Pane. Click on "View" > "Show Script Pane".
+Your PowerShell ISE window will be split in two, with the PowerShell terminal below and the newly visible Script Pane above.
+
+The Script Pane allows us to create scripts but it also has a neat feature in that it allows us to run scripts or parts of scripts for testing without actually saving a script file.
+
+5. Enter the following in the Script Pane:
+```bash
+Get-Date
+Get-ChildItem
+```
+6. Find the green "Run Script" arrow above the Script Pane and click it. Notice what happens. 
+The entries for the script you are writing above are processed and their output appears in the PowerShell terminal below. This is super useful when we are creating scripts because it allows us to test chunks of our script without needing an entire one.
+
+### Part 2: Creating our First Script
 
 
 

@@ -41,7 +41,7 @@ By the end of this lab, you will be able to:
 
 ## Investigation 0: Reconnecting to the Internet
 
-In lab 4, we changed Server1's IP address and network settings so that it could no longer connect to the Internet. We are going to need the Internet for this lab so we are going to temporarily revert back to the old settings. We will change back to a static IP at the end of this lab.
+In lab 4, we changed Server1's IP address and network settings so that it could no longer connect to the Internet. We are going to need the Internet for this lab so we are going to temporarily revert back to the old settings. We will change back to a static IP at the end of lab 7.
 
 1. Using what you learned in lab 4, change Server1's network settings back to "Obtain an IP address automatically" and "Obtain DNS server address automatically".
 2. Reboot Server1.
@@ -181,10 +181,155 @@ There are several CMDLETs associates with the "Service" noun:
 
 1. We are going to use a few of these with a simple service but first let's take a look at the services available on our computer with:
 ```bash
-get-service
+Get-Service
 ```
 
 You will see a list of all the services available on Server1 and their status.
 
+2. We can get service information for a specific service with the "-name" option:
+```bash
+Get-Service -name Spooler
+```
+3. Notice that the Spooler service is currently running. Let's stop it:
+```bash
+Stop-Service -name Spooler
+```
 
+4. Now, check its status again:
+```bash
+Get-Service -name Spooler
+```
+You should see the status has changed from "Running" to "Stopped".
 
+**Screenshot 2: Take a screenshot showing that the Spooler service is stopped**
+
+5. Before we move on, start it back up again:
+```bash
+Start-Service -name Spooler
+```
+**Screenshot 3: Take a screenshot showing that the Spooler service is Running**
+
+## Investigation 3: Aliases
+
+Aliases are strings that reference CMDLETs. Powershell has several built-in aliases (including many Linux commands) to make it easier for people to get started with Powershell, even if they are used to  different operating system.
+
+### Part 1: Finding Built-In Aliases
+
+You have already seen a few of these earlier in the lab (the aliases for Get-Childitem). There are a couple CMDLETs that are useful when looking for existing aliases.
+
+1. In Powershell, enter:
+```bash
+Get-Alias
+```
+The output of this CMDLET will show you a list of aliases on the left and what CMDLET they reference on the right.
+
+2. You can also check specific CMDLETs for what aliases they have. Try:
+```bash
+Get-Alias -Definition Get-Childtem
+```
+You should get a listing of all the aliases associated with the "Get-Childitem" CMDLET. Try running each alias and see what the output looks like. They should all be the same.
+
+### Part 2: User-Defined Aliases
+
+While the built-in aliases are useful, the real power in aliases comes from the ability to create our own. You can add however many aliases for however many CMDLETs you'd like to better suit your environment or administration style. 
+
+However, user-defined aliases are not permanent. They exists as long as the Powershell session is active and are removed when the session is closed. Before we get around that problem, let's test it out to see what happens.
+
+1. Run the following in Powershell:
+```bash
+Set-Alias gs Get-Service
+```
+
+2. Now run the alias you just set:
+```bash
+gs
+```
+You should get the output of the "Get-Service" CMDLET.
+
+4. Now try:
+```bash
+gs -name Spooler
+```
+You should get the status of the Spooler service.
+
+**Screenshot 4: Take a screenshot showing the Spooler status output coming from the "gs" alias**
+
+5. Now, close Powershell, open it again, and try running your "gs" alias again. What happened? You should be met with an error.
+
+6. Add the alias again:
+```bash
+Set-Alias gs Get-Service
+```
+
+7. Now run:
+```bash
+Get-Alias -Name gs
+```
+This will show you what CMDLET the "gs" alias is mapped to.
+
+**Screenshot 5: Take a screenshot showing the "gs" alias mapped to the "Get-Service" CMDLET.**
+
+There are a few reasons why aliases are not permanent. In particular, we don't want old aliases hanging around when we start scripting as they can cause problems if we don't know they are there or if we forget what aliases have been set.
+
+There is a way to make them permanent if we want to, however...
+
+### Part 3: Creating a Profile
+
+You can create a PowerShell profile to customize your environment and to add session-specific elements to every PowerShell session that you start.
+
+A PowerShell profile is a script that runs when PowerShell starts. You can use the profile as a logon script to customize the environment. You can add commands, aliases, functions, variables, snap-ins, modules, and PowerShell drives.
+
+We are going to stick to a simple example here but Powershell Profiles are extremely useful to administrators because you can tailor Powershell sessions to your specific local and network environment.
+
+"$PROFILE" is a special system variable that references a file representing the users specific Powershell startup script.
+
+1. In Powershell run:
+```bash
+$PROFILE
+```
+You should get a file path pointing to your current profile.
+
+2. Try to edit this file with:
+```bash
+Notepad $Profile
+```
+You should be met with an error. Click "Cancel". You received an error because no profile actually exists yet. Let's create one.
+
+3. Enter the following command:
+```bash
+New-Item -Itemtype File -Path $Profile -Force
+```
+You should receive output showing that the file has been created.
+
+4. Now let's try opening it again:
+```bash
+Notepad $Profile
+```
+An empty file should open up. 
+
+5. Let's add our "gs" alias to it. Enter the following into the file:
+```bash
+Set-Alias gs Get-Service
+```
+Save the file and close it. 
+
+6. Close Powershell and open it again. 
+7. Try running:
+```bash
+gs -name Spooler
+```
+Your alias should be working.
+
+8. Run:
+```bash
+type $profile
+```
+This will give you the contents of your profile file.
+
+**Screenshot 6: Take a screenshot of the output of "type $profile" which should have your alias entry.**
+
+## Lab 6 Sign Off
+
+You should have 6 screenshots that you have been taking throughout this lab.
+
+Put all 6 of these screenshots into a text document and upload it to the Lab 4 Submission page in Blackboard.

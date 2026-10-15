@@ -112,7 +112,9 @@ Start-PSAdmin
 ```
 A new PowerShell window should appear.
 
-5. Now let's try something with a bit of utility. At the PS prompt, type the following multi-line function called "Get-SmallFiles". This function has a user-defined variable, named "$size". The function displays all the files that are smaller than the value of the "$size" parameter, and it excludes directories (be careful with typos!):
+Now let's try something with a bit of utility. We are going to add a multi-line function called "Get-SmallFiles". This function has a user-defined variable called "$size". This function displays all the files that are smaller than the user-defined variable and excludes directories.
+
+5.  At the PS prompt, enter:
 ```bash
 function Get-SmallFiles {
   Param($Size)
@@ -157,6 +159,8 @@ function Get-SmallFiles {
   }
 }
 ```
+*Note - Unlike when you first created the "Get-SmallFiles" function, the tab spacing will not be done automatically for you in the "$Profile" file. For clarity, the first line has 0 tabs, the second and third line have 1 tab, the fourth line has 2 tabs, the fifth line has 1 tab, and the last line has 0 tabs.*
+
 
 
 

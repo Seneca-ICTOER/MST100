@@ -121,7 +121,7 @@ function Get-SmallFiles {
   }
 }
 ```
-*Note - as you enter this into PowerShell, the "{" and "}" special characters will allow you to use multiple lines for the function. You also do not need to worry about spacing or tabs. PowerShell will take care of that for you as well.*
+*Note - as you enter this into PowerShell, the "\{" and "\}" special characters will allow you to use multiple lines for the function. You also do not need to worry about spacing or tabs. PowerShell will take care of that for you as well.*
 
 6. Before we run this function, let's take a step to help show that it works. We already have 3 empty files in our "MyScripts" directory. Let's add another file that has something in it. Run:
 ```bash

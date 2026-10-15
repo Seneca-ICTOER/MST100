@@ -196,6 +196,17 @@ Let's open it up.
 2. Click on "Windows PowerShell ISE".
 The application will open and it will look similar to a standard PowerShell terminal but you will notice many other buttons and tools available. 
 
+Notice on the right hand side there is a list of CMDLETs. You can type into the "Name" field at the top to search for specific ones and you can further refine your search by changing the "Modules" dropdown to a specific module (like Hyper-V for example).
+
+You can use the main PowerShell terminal in the middle as normal. 
+
+3. Use it to navigate to your "MyScripts" directory with the following:
+```bash
+cd c:\MyScripts
+```
+Notice that as you do so, PowerShell ISE will give you an auto-fill option for your directory. This is called "Intellisense" and it will recommend how to finish your commands. You can hit the "Tab" key on your keyboard to accept a suggestion.
+
+
 
 
 

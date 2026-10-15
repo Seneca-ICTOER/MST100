@@ -112,7 +112,7 @@ Start-PSAdmin
 ```
 A new PowerShell window should appear.
 
-5. Now let's try something with a bit of utility. At the PS prompt, type the following multi-line function called "Get-SmallFiles". This function has a user-defined variable, named $size. The function displays all the files that are smaller than the value of the $size parameter, and it excludes directories (be careful with typos!):
+5. Now let's try something with a bit of utility. At the PS prompt, type the following multi-line function called "Get-SmallFiles". This function has a user-defined variable, named "$size". The function displays all the files that are smaller than the value of the "$size" parameter, and it excludes directories (be careful with typos!):
 ```bash
 function Get-SmallFiles {
   Param($Size)
@@ -144,6 +144,22 @@ The problem with the modules and functions we've added and used in this lab is t
 ```bash
 Notepad $profile
 ```
-2. Inside the file, add the following:
+2. Inside the file, add the module import and functions you have done so far in this lab:
+```bash
+Import-Module Hyper-V
+
+Function Start-PSAdmin {Start-Process PowerShell -Verb RunAs}
+
+function Get-SmallFiles {
+  Param($Size)
+  Get-ChildItem | Where-Object {
+    $_.Length -lt $Size -and !$_.PSIsContainer
+  }
+}
+```
+
+
+
+
 
 

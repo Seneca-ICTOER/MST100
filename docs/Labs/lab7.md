@@ -209,7 +209,7 @@ Notice that as you do so, PowerShell ISE will give you an auto-fill option for y
 4. Now let's open the Script Pane. Click on "View" > "Show Script Pane".
 Your PowerShell ISE window will be split in two, with the PowerShell terminal below and the newly visible Script Pane above.
 
-The Script Pane allows us to create scripts but it also has a neat feature in that it allows us to run scripts or parts of scripts for testing without actually saving a script file.
+The Script Pane allows us to create scripts but it also has a neat feature in that it allows us to run CMDLETs, scripts, or parts of scripts for testing without actually saving a script file.
 
 5. Enter the following in the Script Pane:
 ```bash
@@ -219,7 +219,37 @@ Get-ChildItem
 6. Find the green "Run Script" arrow above the Script Pane and click it. Notice what happens. 
 The entries for the script you are writing above are processed and their output appears in the PowerShell terminal below. This is super useful when we are creating scripts because it allows us to test chunks of our script without needing an entire one.
 
-### Part 2: Creating our First Script
+### Part 2: Using Variables
+
+In the context of scripting, a variable is a string that contains a value. What that value is will depend on how the variable is created and what is stored in it. 
+
+Let's try creating a simple variable, storing a value in it, and then recalling that value.
+
+1. Open PowerShell ISE if you haven't already and open the Script Pane.
+2. Enter the following into the Script Pane:
+```bash
+$name= Read-Host "What is your name?"
+```
+3. Click the green "Run Script" arrow above the Script Pane and take a look at the PowerShell terminal (with the blue background). You should see that you are being asked for your name.
+4. Enter your name in the PowerShell terminal and hit "Enter". What happened? 
+5. Now, in the PowerShell terminal, enter the following:
+```bash
+echo $name
+```
+You should see your name appear.
+What we have just done is stored a value in a variable called "name", denoted by the ($) in front of it. That special symbol in front of a string tells us that it is a variable. Variables are very useful in scripting because it allows us to apply sets of instructions to all sorts of inputs depending on what we want our script to do.
+
+Let's enhance our script a bit using another variable. 
+
+6. First, let's actually save out script so we can access it later. In PowerShell ISE, click "File" and then "Save As". Name your script "MyFirstScript" and save it in your "MyScripts" directory.
+7. Now, below the line asking for a name, add the following to your script:
+```bash
+$age= Read-Host "How old are you?"
+```
+
+
+
+
 
 
 

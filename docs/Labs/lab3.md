@@ -68,7 +68,7 @@ Now that we have roles installed let's look at how we can remove them.
 2. Click "Next" in the "Remove Roles and Features" wizard window.
 3. Select your server (it should be the only one there) and click "Next".
 4. Uncheck "Print and Document Services", click "Remove Features" in the window that appears, and then click "Next".
-5. Click "Next" again and then on the "Confirm removal selections" screen heck the "Restart the destination server automatically if required" box and then click "Remove".
+5. Click "Next" again and then on the "Confirm removal selections" screen check the "Restart the destination server automatically if required" box and then click "Remove".
 6. Windows will remove the Print Services role. Click "Close" when it is finished.
 7. Shut down Server1.
 

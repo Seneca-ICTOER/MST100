@@ -14,7 +14,6 @@ This week's lab will cover the following:
 - Adding and removing roles in Windows Server
 - Learning about and editing the registry
 
-
 ## Lab 3 Notes
 
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. Also, one screenshot cannot be taken once the lab has been completed so please take care to take your screenshots when instructed to.
@@ -22,6 +21,7 @@ You will be asked to take screenshots along the way in this lab. It is easier to
 ## Objectives
 
 By the end of this lab, you will be able to:
+
 - Add roles in Windows Server
 - Remove roles in Windows Server
 - Export Registry entries for backup
@@ -39,20 +39,22 @@ In this investigation, you will install 3 new roles into Server1 and then remove
 3. The "Add Roles and Features" wizard window will appear. Click "Next".
 4. Select "Role based or feature-based installation" and click "Next".
 5. Select your server (it should be the only one there) and click "Next".
-6. The next screen will have a listing of all he available roles that can be installed onto your Windows Server. Check the following 3 roles (*NOTE: As you select each role, it will prompt you to add necessary features for that role. Accept what it gives you to install and click "Add Features"*):
-  - Print and Document Services
-  - Web Server (IIS)
-  - DNS (When selecting DNS you will get a Validation Results warning. Do not worry about this. We will be fixing this issue in lab 4. Just click "Continue" when it appears)
+6. The next screen will have a listing of all he available roles that can be installed onto your Windows Server. Check the following 3 roles (_NOTE: As you select each role, it will prompt you to add necessary features for that role. Accept what it gives you to install and click "Add Features"_):
+
+- Print and Document Services
+- Web Server (IIS)
+- DNS (When selecting DNS you will get a Validation Results warning. Do not worry about this. We will be fixing this issue in lab 4. Just click "Continue" when it appears)
+
 7. With all 3 roles selected, click "Next".
 8. Click "Next" on the next few windows, accepting the default options each one gives you until you arrive on the "Confirm installation selections" window.
 9. Check the "Restart the destination server automatically if required" box and then click "Install".
 10. Your roles will now be installed onto Windows Server. Wait for the installations to all complete and then click "Close".
 
-You should now see the new roles you installed have been added as tiles in your Server Manager listed under "Roles and Server Groups". They will also appear in the top-left area of Server Manager listed under "Dashboard", "Local Server", and "All Servers". 
+You should now see the new roles you installed have been added as tiles in your Server Manager listed under "Roles and Server Groups". They will also appear in the top-left area of Server Manager listed under "Dashboard", "Local Server", and "All Servers".
 
-You will also notice that these tiles are all coloured red. This is because they have not been finalized because we have not rebooted.
+You will also may notice that these tiles are all coloured red. This is because they have not been finalized because we have not rebooted.
 
-Reboot your Server1.
+Regardless of their colour, reboot your Server1.
 
 When the server and Server Manager come back up, wait a moment and you will see your new Roles appear as tiles once again but now with green accents to show they are ready to go. We will leave them for now but we will come back to DNS and IIS in lab 4.
 
@@ -78,29 +80,35 @@ Now you know how to add and remove roles in Windows Server. Pretty easy, right? 
 
 ### Part 1: Installing Roles in Powershell
 
-Installing and removing roles on Server Core is not difficult but it requires the installation of the Server Manager module and the use of Powershell. 
+Installing and removing roles on Server Core is not difficult but it requires the installation of the Server Manager module and the use of Powershell.
 We will be discussing Powershell in more detail in lab 6 and 7 but for now just keep in mind that it is required for most tasks in Server Core.
 
 1. Power on and log into Server2. You should be met with the "Welcome to Windows Server 2025 Datacenter" screen with 15 options.
 2. Type "15" and press "Enter". This will bring you to the command line. Windows Server 2025 will default to a Powershell command line. You can tell because you will see the letters "PS" next to your current directory path.
 3. To install Server Manager, enter the following command:
+
 ```bash
 import-module servermanager
 ```
+
 You should see no output if it runs successfully.
 
 4. Now, let's see what roles and features are already installed and which ones are available to install. Run the following command:
+
 ```bash
 get-windowsfeature
 ```
+
 This will generate a large listing of all available windows roles and features. An "X" beside a role or feature indicates that it is already installed.
 
 Let's add a new one - the "Print Services" role.
 
 5. Enter the following command:
+
 ```bash
 add-windowsfeature print-services -restart
 ```
+
 Server Core will install the Print Services role and when it has completed you will be met with output specifying the success of the installation (Exit Code: Success).
 
 You can also confirm that the role was succussfully installed by running the "get-windowsfeature" command again. Notice that there is not an "X" next to "Print and Document Services" and "Print Server".
@@ -112,22 +120,27 @@ Now we will remove that same role.
 ### Part 2: Removing Roles in Powershell
 
 1. Reboot your Server2 with the following command:
+
 ```bash
 shutdown /r /t 0
 ```
+
 2. When it is finished rebooting, log in and return to the Powershell command line.
 
 3. Now, enter the following command:
+
 ```bash
 remove-windowsfeature print-services -restart
 ```
+
 Windows should reboot once the role has been removed. If not, reboot manually.
 
-4. Log back in, return to the Powershell command line and enter the "get-windowsfeature" command once again. Note that "X"s next to "Print and Document Services" and "Print Server" have been removed. 
+4. Log back in, return to the Powershell command line and enter the "get-windowsfeature" command once again. Note that "X"s next to "Print and Document Services" and "Print Server" have been removed.
 
 **Screenshot 4: Take a screenshot here to show you successfully removed the Print Services role on Server2.**
 
 5. Shut down your Server2 with the following command:
+
 ```bash
 shutdown /s /t 0
 ```
@@ -141,13 +154,13 @@ In this next section we are going to mess around in the Registry.
 ### Part 1: Exporting Registry Keys
 
 Before we go in and start changing things, we are going to learn how to backup up parts of the registry.
-We are not going to change anything critical in the Registry but (as is the case with any configuration on any system) it is always a good idea to backup your default settings. That way, if you break something, you can always revert to the backup. 
+We are not going to change anything critical in the Registry but (as is the case with any configuration on any system) it is always a good idea to backup your default settings. That way, if you break something, you can always revert to the backup.
 
 Entries in the registry are called "Keys". They vary widely in structure and function but they can all be backed up the same way. We are going to be modifying the key that controls the legal notice when logging into Windows so we are going to back up that key along with the entire location in which it sits.
 
 1. Power on Server1 and log in.
 2. Click the blue Windows button at the bottom of the screen and type "run" and hit "Enter".
-3. The "Run" dialogue box will appear. Enter "regedit" and click "OK". The Registry Editor window will appear. *Note: Take extra care when navigating the Registry. There are many directories that appear as duplicates down different paths of the registry directory tree and you want to make sure you are in the right place before making any changes. Changes made in the wrong place can end in disastrous results.*
+3. The "Run" dialogue box will appear. Enter "regedit" and click "OK". The Registry Editor window will appear. _Note: Take extra care when navigating the Registry. There are many directories that appear as duplicates down different paths of the registry directory tree and you want to make sure you are in the right place before making any changes. Changes made in the wrong place can end in disastrous results._
 4. Navigate to the following path in the Registry Editor: HKEY_LOCAL_MACHINE\ SOFTWARE\ Microsoft\ Windows\ CurrentVersion\ policies\ system
 5. If you are in the right place you will see the "legalnoticecaption" and "legalnoticetext" keys. Click "File" in the top-left of the Registry Editor window and then click "Export".
 6. Name your backup "RegistryLegalNotice.reg" and save it to the C: drive.

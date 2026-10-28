@@ -347,6 +347,8 @@ if ($age -ge 30) {Write-Host "You are old."}
 
 7. Now test run the script again, entering "30" for the age. Notice that now the script gives an output for that number.
 
+**Screenshot 6: Take a screenshot showing the contents of the Script Pane and the Powershell terminal below having test run your script with the two possible conditions.**
+
 To fix the issue of the user not giving us a valid number, there are two things we have to worry about here. First, we don't want the user to give us something that isn't a number. Second, we don't want the user giving us a negative number since people can't be "negative" years old. To accomplish this, we are going to use "elseif" and "else" to restructure our script a little.
 
 8. Replace your two if statement lines with the following:
@@ -420,9 +422,11 @@ else {
 
 We now have a functioning script that uses variables and conditional logic to output a few different pieces of information. However, we have skipped one of the most important parts of scripting: comments.
 
-Comments are important because they explain each part of our script. This is useful for us as the script creator for when we walk away from a partially completed script to come back to it later but also in case someone else wants to use our script. The comments ensure anyone looking through it understands what the script is meant to do and how it works. So let's clean up our script. We will also add in a date capture while we are at it.
+### Part 4: Commenting
 
-12. Change your entire script to:
+Comments are important because they explain each part of our script. This is useful for us as the script creator for when we walk away from a partially completed script to come back to it later but also in case someone else wants to use our script. The comments ensure anyone looking through it understands what the script is meant to do and how it works. So let's add comments to our scritp. We will also clean up our script and add in a date capture while we are at it.
+
+1. Change your entire script to:
 
 ```bash
 #Script Purpose: Gather users name and age. Output user's name and computer name and a message based on age entered
@@ -466,4 +470,54 @@ else {
 }
 ```
 
-SET EXECUTION POLICY
+Congratulations! You have created your first fully functioning, fully commented, clean looking PowerShell script! Feel free to play around with it a bit.
+
+**Screenshot 7: Take a screenshot showing the entire contents of the Script Pane.**
+
+### Part 5: Execution Policy
+
+There are 4 PowerShell script policies:
+
+- Unrestricted – Allow all scripts.
+- RemoteSigned* – Allow local scripts and remote signed scripts. *default setting
+- AllSigned – Allow only signed scripts (local or remote).
+- Restricted – No scripts will run.
+
+Script signatures are sort of like stamps or seals. At the risk of oversimplifying... adding one to a script means that is has been certified by its creator to operate a certain way and do a certain task. Changing the script invalidates the signature. So essentially, this is a way of ensuring only scripts that are safe are run on the system. With that said, a good administrator NEVER runs a script they don't understand.
+
+1. You can run the following command to get your currently running execution policy:
+
+```bash
+Get-ExecutionPolicy
+```
+
+Your system should be set to "RemoteSigned" by default.
+
+2. You can change the execution policy with:
+
+```bash
+Set-ExecutionPolicy Unrestricted
+```
+
+3. You will get a warning message about this. Click "Yes to All".
+4. Run the following:
+
+```bash
+Get-ExecutionPolicy
+```
+
+**Screenshot 8: Take a screenshot showing the output of the Set-ExecutionPolicy command.**
+
+5. Change your policy back to RemoteSigned:
+
+```bash
+Set-ExecutionPolicy RemoteSigned
+```
+
+6. Click "Yes to All" again.
+
+## Lab 6 Sign Off
+
+You should have 8 screenshots that you have been taking throughout this lab.
+
+Put all 8 of these screenshots into a text document and upload it to the Lab 4 Submission page in Blackboard.

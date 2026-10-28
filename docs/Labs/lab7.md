@@ -206,7 +206,8 @@ That said, the idea of scripting and how it is used in practice is entirely depe
 It is a wide and deep ocean of which PowerShell is only a small part. It is unlikely that you will become a scripting expert of any kind doing solely what is taught to you in this course or any other courses you take.
 
 You will not learn all that much from slides and lectures.
-You need to actually _do_ scripting.
+
+**You need to actually _do_ scripting.**
 
 In this course/lab we are going to just barely scratch the surface of PowerShell scripting. This may seem daunting (and it is) but you will come to better understand scripting and how to effectively write and use scripts the more your write and use scripts.
 

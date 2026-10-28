@@ -142,7 +142,7 @@ Now that Server2 is installed we are going to perform the same post-installation
 10. Back on the SConfig screen, find the option for "Install Updates", enter the corresponding number, and press "Enter".
 11. Enter "1" (All quality updates) and press "Enter".
 12. Windows Server will search for applicable updates and eventually it will ask you which updates to install. Enter "A" (All Updates) and press "Enter".
-13. Windows Server will not download and install its updates. This may take a while.
+13. Windows Server will now download and install its updates. This may take a while.
 14. Once the installations are complete, the system will ask you to restart. Enter "Y" (yes) and press "Enter".
 15. Server2 will restart. It may continue updating and restart again.
 16. When Server2 comes back up, log in and go back into the "Install Updates" option. Once again, Enter "1" and press "Enter".

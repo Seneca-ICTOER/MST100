@@ -272,6 +272,8 @@ First, we will make a small change to the default webpage that comes with IIS, j
 4. From the new Window you can modify your starter web site by opening the file iisstart (the HTML file, NOT the PNG file) in Notepad. You will be editing HTML code in this file. To make a basic modification to the site, change the title of the page by modifying the text that appears between the \<title\> tags to include your name. You may also make any other modifications you like (not required). Save and exit the file.
 5. To view your web page locally, open a web browser, and type 127.0.0.1 in the browser address bar. (Remember, 127.0.0.1 is the loopback address and not your actual IP address.) The default IIS webpage should appear (an image with a bunch of blue squares and "Welcome" written in different languages), and the tab title should have your changes. As long as you can see your name in the tab title you have edited the HTML file correctly.
 
+**_MAYBE USE AI HERE TO MAKE A SIMPLE HTML PAGE??_**
+
 ### Part 2: Configuring DNS on Server1
 
 Now that our webpage is updated, we need to set up DNS so that we can access that webpage using a Fully Qualified Domain Name (FQDN) instead of an IP address. To accomplish this, we will be mapping the IP address of our Server1 to a domain.

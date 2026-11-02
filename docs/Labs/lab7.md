@@ -517,7 +517,7 @@ Set-ExecutionPolicy RemoteSigned
 
 6. Click "Yes to All" again.
 
-### Part 6: Changing your IP config back to static
+## IMPORTANT: Change your IP Config Back to Static!
 
 Before moving on to lab 8, make sure you change Server1's IP settings back what they were before lab 6. Go back and check lab 4 if you need a reminder for how to do this but make sure the following is set before moving on:
 

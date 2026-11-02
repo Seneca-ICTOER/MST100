@@ -391,4 +391,4 @@ This will give you the contents of your profile file.
 
 You should have 6 screenshots that you have been taking throughout this lab.
 
-Put all 6 of these screenshots into a text document and upload it to the Lab 4 Submission page in Blackboard.
+Put all 6 of these screenshots into a text document and upload it to the Lab 6 Submission page in Blackboard.

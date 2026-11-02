@@ -517,8 +517,16 @@ Set-ExecutionPolicy RemoteSigned
 
 6. Click "Yes to All" again.
 
-## Lab 6 Sign Off
+### Part 6: Changing your IP config back to static
+
+Before moving on to lab 8, make sure you change Server1's IP settings back what they were before lab 6. Go back and check lab 4 if you need a reminder for how to do this but make sure the following is set before moving on:
+
+IP Address: 10.10.xxx.10
+Subnet Mask: 255.255.255.0
+Preferred DNS server: 10.10.xxx.10
+
+## Lab 7 Sign Off
 
 You should have 8 screenshots that you have been taking throughout this lab.
 
-Put all 8 of these screenshots into a text document and upload it to the Lab 4 Submission page in Blackboard.
+Put all 8 of these screenshots into a text document and upload it to the Lab 7 Submission page in Blackboard.

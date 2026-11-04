@@ -52,9 +52,9 @@ _What accounts are currently on Server1? How did they get there? What are their 
 
 You will see the blue "Add a user" window appear. Add a user with the following information:
 
-User Name: CStrife
-Password: P@ssw0rd
-Password hint: the same password we use for everything
+- User Name: CStrife
+- Password: P@ssw0rd
+- Password hint: the same password we use for everything
 
 3. Click "Next". Notice that the user is being added as a "Local Account". Click "Finish".
 4. Back on the "Choose the user you would like to change" screen, select the new CStrife user account.
@@ -154,34 +154,34 @@ net localgroup “Avalanche” AGainsborough /add
 
 2. Using whichever method you prefer, create the following users (use "P@ssw0rd" for all their passwords, remember to uncheck "User must change password at next logon"  and check "Password never expires" for all of them):
 
-Username: BWallace
-Full Name: Barret Wallace
-Description: Environmentalist
+- Username: BWallace
+- Full Name: Barret Wallace
+- Description: Environmentalist
 
-Username: VValentine
-Full Name: Vincent Valentine
-Description: Emo Vampire
+- Username: VValentine
+- Full Name: Vincent Valentine
+- Description: Emo Vampire
 
-Username: YKisaragi
-Full Name: Yuffie Kisaragi
-Description: Ninja
+- Username: YKisaragi
+- Full Name: Yuffie Kisaragi
+- Description: Ninja
 
 3. Configure your groups and users as follows:
 
-Group: Avalanche
-Members: AGainsborough, CStrife, TLockheart, BWallace
+- Group: Avalanche
+- Members: AGainsborough, CStrife, TLockheart, BWallace
 
-Group: Shinra
-Members: CStrife, VValentine,
+- Group: Shinra
+- Members: CStrife, VValentine,
 
-Group: Ranged
-Members: BWallace, VValentine, YKisaragi
+- Group: Ranged
+- Members: BWallace, VValentine, YKisaragi
 
-Group: Melee
-Members: CStrife, TLockheart, CHighwind
+- Group: Melee
+- Members: CStrife, TLockheart, CHighwind
 
-Group: Magic
-Members: AGainsborough
+- Group: Magic
+- Members: AGainsborough
 
 **Screenshot 5: Take a screenshot showing which users are members of the "Avalanche", "Shinra", "Ranged", "Melee", and "Magic" groups.**
 
@@ -191,17 +191,7 @@ Members: AGainsborough
 
 We are now going to apply Share and Permission settings to a set of folders for the users and groups we have created.
 
-1. Create the following directory structure on your C: drive on Server1:
-
-**FF7**
-
-|- **Ranged**
-
-|- **Melee**
-
-|- **Magic**
-
-
+1. Create a directory on your C: drive on Server1 called "FF7". Inside of that directory create 3 directories called "Magic", "Melee", and "Ranged".
 2. Before we can actually apply any settings to this directory, we have to turn off a built in default setting that will hinder our ability to set specific shares and permissions ourselves. In the File Explorer, look near the top of the window and you should see three dots. Click those three dots and then select "Options".
 3. Click on the "View" tab and scroll down until you see "Use Sharing Wizard". Uncheck this box, click "Apply", and then click "OK".
 4. In the File Explorer, navigate back to your C: drive.
@@ -222,17 +212,17 @@ What we have just done is set the "Share" permissions. This is one side of permi
 16. Add the "Ranged" group and leave the default permissions it is assigned. 
 17. Repeat steps 9-16 for the "Melee" and "Ranged" directories giving them the following permissions (remember to do this for both Share and Local permissions):
 
-Directory: Melee
-Permissions:
-Shinra - Full Control
-Melee - Full Control
-Avalanche - Read
+- Directory: Melee
+- Permissions:
+- Shinra - Full Control
+- Melee - Full Control
+- Avalanche - Read
 
-Directory: Ranged
-Permissions:
-Shinra - Full Control
-Ranged - Full Control
-Melee - Read
+- Directory: Ranged
+- Permissions:
+- Shinra - Full Control
+- Ranged - Full Control
+- Melee - Read
 
 ### Part 2: Testing our Share and Local Permissions
 
@@ -271,3 +261,8 @@ Get-ACL "C:\FF7\Ranged").Access | Select-Object IdentityReference, FileSystemRig
 ```
 **Screenshot 7: Take a screenshot showing the output of the above commands**
 
+## Lab 8 Sign Off
+
+You should have 7 screenshots that you have been taking throughout this lab.
+
+Put all 7 of these screenshots into a text document and upload it to the Lab 8 Submission page in Blackboard.

@@ -194,9 +194,13 @@ We are now going to apply Share and Permission settings to a set of folders for 
 1. Create the following directory structure on your C: drive on Server1:
 
 **FF7**
+
 |- **Ranged**
+
 |- **Melee**
+
 |- **Magic**
+
 
 2. Before we can actually apply any settings to this directory, we have to turn off a built in default setting that will hinder our ability to set specific shares and permissions ourselves. In the File Explorer, look near the top of the window and you should see three dots. Click those three dots and then select "Options".
 3. Click on the "View" tab and scroll down until you see "Use Sharing Wizard". Uncheck this box, click "Apply", and then click "OK".

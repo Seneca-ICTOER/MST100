@@ -1,6 +1,6 @@
 ---
 id: lab8
-title: Lab 8
+title: Lab 8 Local Users and Groups
 sidebar_position: 8
 description: Local Users and Groups
 ---
@@ -101,7 +101,8 @@ We can also use the Server Manager to deal with users. We are also able to creat
 
 10. Create a new user with whatever information you'd like.
 11. Delete the extra user account that you just created in step 10. Notice the warning you receive when doing so. _What does that mean? Why does MS Server do this?_
-    **Screenshot 3: Take a screenshot showing the users listed with their Full Name and Descriptions in the Users window in Server Manager.**
+
+**Screenshot 3: Take a screenshot showing the users listed with their Full Name and Descriptions in the Users window in Server Manager.**
 
 ### Part 3: Local Groups
 
@@ -143,3 +144,126 @@ net localgroup “Avalanche” AGainsborough /add
 ```
 
 3. Go back and check the list of users in the Server Manager. You may have to refresh the list but when you do you will see your new user there. You can check their properties to see that they have also been successfully added to the "Avalanche" group.
+
+### Part 5: Creating More Users and Groups
+
+1. Using whichever method you prefer, create the following groups (you can add whatever description you'd like):
+- Ranged
+- Melee
+- Magic
+
+2. Using whichever method you prefer, create the following users (use "P@ssw0rd" for all their passwords, remember to uncheck "User must change password at next logon"  and check "Password never expires" for all of them):
+
+Username: BWallace
+Full Name: Barret Wallace
+Description: Environmentalist
+
+Username: VValentine
+Full Name: Vincent Valentine
+Description: Emo Vampire
+
+Username: YKisaragi
+Full Name: Yuffie Kisaragi
+Description: Ninja
+
+3. Configure your groups and users as follows:
+
+Group: Avalanche
+Members: AGainsborough, CStrife, TLockheart, BWallace
+
+Group: Shinra
+Members: CStrife, VValentine,
+
+Group: Ranged
+Members: BWallace, VValentine, YKisaragi
+
+Group: Melee
+Members: CStrife, TLockheart, CHighwind
+
+Group: Magic
+Members: AGainsborough
+
+**Screenshot 5: Take a screenshot showing which users are members of the "Avalanche", "Shinra", "Ranged", "Melee", and "Magic" groups.**
+
+## Investigation 3: Create Shares and Set Permissions
+
+### Part 1: Creating Share Permissions
+
+We are now going to apply Share and Permission settings to a set of folders for the users and groups we have created.
+
+1. Create the following directory structure on your C: drive on Server1:
+
+**FF7**
+|- **Ranged**
+|- **Melee**
+|- **Magic**
+
+2. Before we can actually apply any settings to this directory, we have to turn off a built in default setting that will hinder our ability to set specific shares and permissions ourselves. In the File Explorer, look near the top of the window and you should see three dots. Click those three dots and then select "Options".
+3. Click on the "View" tab and scroll down until you see "Use Sharing Wizard". Uncheck this box, click "Apply", and then click "OK".
+4. In the File Explorer, navigate back to your C: drive.
+5. Right-click your "FF7" directory and select "Properties". Click on the "Sharing" tab and then on "Advanced Sharing".
+6. Check the "Share this Folder" box and then click "Permissions".
+7. Check the box that allows "Full Control" for everyone, then click "Apply" and then "OK".
+8. Back in the "Advanced Sharing" window, click "Apply" and then "OK".
+9. Now we will set the permissions for the "Magic" directory. Navigate to the Permissions window for this directory like you did with the first one (Right click on directory >> Properties >> Sharing >> Advanced Sharing >> Permissions)
+10. Click "Add", type in "Magic", click "Check Names" (you should see S1-USERNAME\Magic appear), then click "OK".
+11. Highlight the "Magic" group and change the permissions to "Full Control".
+12. Add the "Shinra" group and give them "Full Control" as well.
+13. Add the "Ranged" group and give them only "Read" access.
+
+What we have just done is set the "Share" permissions. This is one side of permissions that are applied to users and groups. These can technically be used to access directories and resources across the network. Next we will set local permissions. Both are necessary to allow for our users and groups to actually access what we want them to. Remember the principle of "Least Privilege". The most restrictive permissions will always take effect. So we will now set the same local permissions as we did with the share permissions.
+
+14. Go into the "Properties" for the "Magic" directory and this time click on "Security".
+15. Click "Edit" and add the "Magic" group and give it "Full Control". Do the same for the "Shinra" group.
+16. Add the "Ranged" group and leave the default permissions it is assigned. 
+17. Repeat steps 9-16 for the "Melee" and "Ranged" directories giving them the following permissions (remember to do this for both Share and Local permissions):
+
+Directory: Melee
+Permissions:
+Shinra - Full Control
+Melee - Full Control
+Avalanche - Read
+
+Directory: Ranged
+Permissions:
+Shinra - Full Control
+Ranged - Full Control
+Melee - Read
+
+### Part 2: Testing our Share and Local Permissions
+
+Now that we have set up our shares and permissions, let's test them out to see exactly what we have done.
+
+1. Sign out of your current user by clicking the blue Windows icon at the bottom of the screen, clicking on "Administrator" and then clicking "Sign Out".
+2. Sign in as "Cloud Strife".
+3. Open Notepad, write a few words, and then save the file as "sharefile1.txt" in the "Melee" directory. Repeat this step two more times to create "sharefile2.txt" in the "Magic" directory and "sharefile3.txt" in the "Ranged" directory.
+4. Sign out again and log back in as "Aerith Gainsborough".
+5. Using the File Explorer, navigate to the "Magic" directory, open "sharefile2.txt", make a change to the file, and then save it.
+6. Now try to do the same with the "sharefile1.txt" in the "Melee" directory. What happens when you try to modify that file?
+
+The "AGainsborough" user is part of the "Magic" and "Avalanche" groups so they have full permissions to create and modify anything in the "Magic" directory. But they only have "Read" permissions for the "Melee" directory so they can look but not touch anything in that directory.
+
+Lets try one more user.
+
+7. Sign out of the AGainsborough account and log in as "Barret Wallace".
+8. Once logged in, try to modify the "sharefile1.txt" in the "Melee" directory and the "sharefile2.txt" in the "Magic" directory.
+
+Again, you should find that the difference in permissions here means that this user can modify one of those files but the other file they cannot.
+
+9. Sign out of this user account and log back in as "Administrator".
+10. Open PowerShell and run the following 3 commands:
+```bash
+Get-SmbShareAccess -Name "Magic"
+Get-SmbShareAccess -Name "Melee"
+Get-SmbShareAccess -Name "Ranged"
+```
+**Screenshot 6: Take a screenshot showing the output of the above commands**
+
+11. Run the following commands in PowerShell:
+```bash
+Get-ACL "C:\FF7\Magic").Access | Select-Object IdentityReference, FileSystemRights
+Get-ACL "C:\FF7\Melee").Access | Select-Object IdentityReference, FileSystemRights
+Get-ACL "C:\FF7\Ranged").Access | Select-Object IdentityReference, FileSystemRights
+```
+**Screenshot 7: Take a screenshot showing the output of the above commands**
+

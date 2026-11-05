@@ -1,6 +1,6 @@
 ---
 id: lab8
-title: Lab 8 Local Users and Groups
+title: Lab 8 - Local Users and Groups
 sidebar_position: 8
 description: Local Users and Groups
 ---
@@ -148,11 +148,12 @@ net localgroup “Avalanche” AGainsborough /add
 ### Part 5: Creating More Users and Groups
 
 1. Using whichever method you prefer, create the following groups (you can add whatever description you'd like):
+
 - Ranged
 - Melee
 - Magic
 
-2. Using whichever method you prefer, create the following users (use "P@ssw0rd" for all their passwords, remember to uncheck "User must change password at next logon"  and check "Password never expires" for all of them):
+2. Using whichever method you prefer, create the following users (use "P@ssw0rd" for all their passwords, remember to uncheck "User must change password at next logon" and check "Password never expires" for all of them):
 
 - Username: BWallace
 - Full Name: Barret Wallace
@@ -209,7 +210,7 @@ What we have just done is set the "Share" permissions. This is one side of permi
 
 14. Go into the "Properties" for the "Magic" directory and this time click on "Security".
 15. Click "Edit" and add the "Magic" group and give it "Full Control". Do the same for the "Shinra" group.
-16. Add the "Ranged" group and leave the default permissions it is assigned. 
+16. Add the "Ranged" group and leave the default permissions it is assigned.
 17. Repeat steps 9-16 for the "Melee" and "Ranged" directories giving them the following permissions (remember to do this for both Share and Local permissions):
 
 - Directory: Melee
@@ -246,19 +247,23 @@ Again, you should find that the difference in permissions here means that this u
 
 9. Sign out of this user account and log back in as "Administrator".
 10. Open PowerShell and run the following 3 commands:
+
 ```bash
 Get-SmbShareAccess -Name "Magic"
 Get-SmbShareAccess -Name "Melee"
 Get-SmbShareAccess -Name "Ranged"
 ```
+
 **Screenshot 6: Take a screenshot showing the output of the above commands**
 
 11. Run the following commands in PowerShell:
+
 ```bash
 Get-ACL "C:\FF7\Magic").Access | Select-Object IdentityReference, FileSystemRights
 Get-ACL "C:\FF7\Melee").Access | Select-Object IdentityReference, FileSystemRights
 Get-ACL "C:\FF7\Ranged").Access | Select-Object IdentityReference, FileSystemRights
 ```
+
 **Screenshot 7: Take a screenshot showing the output of the above commands**
 
 ## Lab 8 Sign Off

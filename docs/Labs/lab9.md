@@ -1,6 +1,6 @@
 ---
 id: lab9
-title: Lab 9 Introduction to Active Directory
+title: Lab 9 - Introduction to Active Directory
 sidebar_position: 9
 description: Active Directory
 ---
@@ -148,3 +148,41 @@ We will add users to a Global Group and then place the Global Group into a Domai
 6. Find your Domain Local Group called "SalesReps". Select it and then click "OK",
    then "OK", then OK again on the "HO-SalesReps" Properties dialog box.
 7. To verify that you have added your Global Group to the Domain Local Group double-click your SalesReps Local Group and click the Members Tab to see the Global Group listed.
+
+## Investigation 3: Adding a Windows Client to your Domain
+
+The last thing we will do is add our Windows Client VM to the Active Directory Domain we have set up on Server1. This is a very small but accurate example as to how things are typically done. In fact, when you log into the Seneca lab computers this is exactly what you are doing.
+
+1. Begin by powering on and logging into your Client1 VM. Be sure to leave Server1 powered on while you do these next steps.
+2. Double check that our Client1 VM is still set to use the static address you assigned in lab 4.
+3. Click the blue Windows icon at the bottom of the screen and type "Workgroup". Click on "Change workgroup name."
+4. Click on the "Change" button in the "System Properties" window.
+5. Click the "Domain" radio button and enter your domain. (username.local)
+6. You will be asked to provide a username and password. Use "administrator" and "P@ssword", the credentials you set up for your domain admin account. You should see a welcome message pop up.
+7. Reboot Client1
+8. When it comes to the log in screen, click on "Other User" in the bottom left corner and then click on "How do I sign in to another domain?"
+
+Notice the instructions that pop up. When logging into a domain, we need to provide the domain and the username, at least initially. Let's log in using the smoreno user we created.
+
+9. For the username use: **domainame\smoreno** (replace "domainname" with your actual domain name) and use "P@ssw0rd" as your password. Windows will perform a first time login script and will eventually land into the regular Windows desktop.
+10. Open the File Explorer and navigate to "This PC". Notice that there is a network share drive, the "H:" drive.
+
+This is the shared folder that we set up for this user in Active Directory. If we had another client VM, we could log in with the same user from that machine as well and access that same share folder. We can also access the "FF7" directory that was created in lab 8.
+
+11. At the top of the File Explorer window, enter "\\Server1Name\" (for example "S1-hheim") and press "Enter".
+
+You should see several directories including the "FF7" directory and the directories inside it. They have been shared and so anyone on the Domain can access them. This user cannot do anything in these folders because they have no permissions to do so but they can see what's there.
+
+Let's try logging in as another user.
+
+12. Click the blue Windows button, click on "Samantha Moreno", and then on "Switch user".
+13. This time log in as "ksmith". This time you don't need to provide the domain as this machine is already connected to it. Once again, Windows will go through its first time login script and you will land on the Windows desktop.
+14. Check "This PC" again. You should see the network share again, this time under "ksmith".
+
+**Screenshot 7: Take a screenshot showing the output of the above commands**
+
+## Lab 9 Sign Off
+
+You should have 7 screenshots that you have been taking throughout this lab.
+
+Put all 7 of these screenshots into a text document and upload it to the Lab 8 Submission page in Blackboard.

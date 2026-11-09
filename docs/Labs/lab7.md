@@ -11,17 +11,15 @@ description: Installing features, importing modules, functions, and scripting wi
 
 This week's lab will cover the following:
 
+- Installing features in PowerShell
+- Importing modules in PowerShell
+- Creating funtions in PowerShell
+- Using PowerShell Integrated Scripting Environment
+- Creating and running a script in PowerShell
+
 ## Lab 7 Notes
 
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- Install Featured
-- Import Modules
-- Create Functions
-- Use ISE to create a script
-- Run a script
+NOTES HEERRRRRRRRRREEEEEEEEEEEE
 
 ## Investigation 1: Importing Modules
 

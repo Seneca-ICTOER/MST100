@@ -18,15 +18,7 @@ This week's lab will cover the following:
 
 ## Lab 4 Notes
 
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- Configure Server1, Server2, and Client1 with static IP addresses
-- Test connectivity between your VMs
-- Configure DNS and add DNS records
-- Create and connect to a basic web page using IIS
-- Use RDP to log into Server2 from Client1
+NOTES HERRRRRRRRRRRRRRRRRRRRRRRRRRRRRREEEEEEEEEEEEEE
 
 ## Investigation 1: Exploring Network information and Assigning Static IP Addresses to your Virtual Machines
 

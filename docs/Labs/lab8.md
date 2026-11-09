@@ -18,11 +18,7 @@ This week's lab will cover the following:
 
 ## Lab 8 Notes
 
-## Objectives
-
-By the end of this lab, you will be able to:
-
--
+NOTES HERRRRREEEEEE
 
 ## Investigation 1: Creating and Joining a Workgroup
 

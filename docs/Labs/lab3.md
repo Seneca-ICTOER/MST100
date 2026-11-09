@@ -11,22 +11,13 @@ description: Configuring basic settings in Windows Server and Windows 11
 
 This week's lab will cover the following:
 
-- Adding and removing roles in Windows Server
-- Learning about and editing the registry
+- Adding roles in Windows Server
+- Removing roles in Windows Server
+- Learning about and editing the Windows Registry
 
 ## Lab 3 Notes
 
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. Also, one screenshot cannot be taken once the lab has been completed so please take care to take your screenshots when instructed to.
-
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- Add roles in Windows Server
-- Remove roles in Windows Server
-- Export Registry entries for backup
-- Add registry entries
-- modify registry entries
 
 ## Investigation 1: Installing and Removing Roles with a GUI
 

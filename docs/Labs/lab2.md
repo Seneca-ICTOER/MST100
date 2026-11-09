@@ -15,24 +15,12 @@ This week's lab will cover the following:
 - Installing the following 3 Virtual Machines:
   - Server1: Windows Server 2025 Datacenter (with GUI)
   - Server2: Windows Server 2025 Datacenter Core (without GUI)
-  - Client1: Windows 11 Education   
+  - Client1: Windows 11 Education
 - Performing post-installation tasks on all 3 virtual machines
 
 ## Lab 2 Notes
 
-The primary method to do the labs in MST100 is to use virtual machines running on VMware inside the Seneca PC Windows image. There will be a few times in this course where you will need to have two VMs turned on at once but for the most part it is best to make sure that you have only one turned on at a time so as to ensure the stability of your system. Even so, you may experience VM crashes or system lock ups from time to time as MS Windows and VMware are quite resource intensive.
-
-**Maybe make a note on backups??**
-
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- use VMWare to install virtual machines
-- install a GUI version of Windows Server 2025
-- install a GUI-less version of Windows Server 2025
-- install an Education version of Windows 11
-- recognize the differences in these installations and the time/resources needed for each
+The primary method to do the labs in MST100 is to use virtual machines running on VMware inside the Seneca PC Windows image. There will be a few times in this course where you will need to have two VMs turned on at once but for the most part it is best to make sure that you have only one turned on at a time so as to ensure the stability of your system. Even so, you may experience VM crashes or system lock ups from time to time as MS Windows and VMware are quite resource intensive and this can result in instability at times.
 
 ## Investigation 1: Installing your VMs
 
@@ -43,7 +31,6 @@ In this investigation, you will install all 3 virutual machines using VMWare Wor
 3. Double check that the directories you created in lab 1 are there.
 4. Open VMWare Workstation Pro from the desktop.
 
-
 ### Part 1-1: Installing Windows Server 2025 Datacenter (GUI)
 
 In this part, you will install Windows Server 2025 Datacenter with a GUI.
@@ -51,7 +38,7 @@ In this part, you will install Windows Server 2025 Datacenter with a GUI.
 1. Click "Create a New Virtual Machine" on the Home tab in VMWare Workstation Pro.
 2. Select "Typical" and click "Next".
 3. Select "Installer disc image file (iso)" and then click "Browse".
-4. Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO. 
+4. Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO.
 5. You should notice a message below the path to the ISO that says "Windows Server 2025 detected. This operating system will use Easy Install". Click "Next"
 6. Enter your Windows Server 2025 product key (which should be in your "Keys" file on your external hard drive).
 7. For "Version of Windows to Install" leave the default (should be "Windows Server 2025 Datacenter").
@@ -59,15 +46,15 @@ In this part, you will install Windows Server 2025 Datacenter with a GUI.
 9. For "Password", enter "P@ssw0rd".
 10. Do **NOT** check "Log on automatically". Click "Next".
 11. For "Virtual Machine name", enter "Server1".
-12. For "Location", click "Browse" and navigate to and select the directory called "Server1" in your external hard drive and click "OK". Confirm the path to your "Server1" directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click "Next". 
+12. For "Location", click "Browse" and navigate to and select the directory called "Server1" in your external hard drive and click "OK". Confirm the path to your "Server1" directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click "Next".
 13. Leave the disk size at 60 GB and select "Store virtual disk as a single file". Click "Next"
 14. Click "Customize Hardware".
 15. Change "Memory" to 4096 MB.
 16. Change "Processors" to 1 Processor and 4 cores per processor. Click "Close". Click "Finish".
 17. The virtual machine will launch and the installation will begin. You will be asked to put your product key in once again. Do so and click "Next".
-    - *to "paste" into the VM, click inside the Product Key box so that the cursor is seen inside it, then click "Edit" in VMWare and select "Paste".
+    - \*to "paste" into the VM, click inside the Product Key box so that the cursor is seen inside it, then click "Edit" in VMWare and select "Paste".
 18. From here, most of the installation will be automatic. The VM will restart several times during the installation.
-19. Eventually you will land on the Windows Server 2025 desktop and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click "Yes" and your VM will reboot. 
+19. Eventually you will land on the Windows Server 2025 desktop and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click "Yes" and your VM will reboot.
 
 ### Part 1-2: Windows Server 2025 GUI Post-Installation Tasks
 
@@ -76,7 +63,7 @@ Now that our Server1 is installed, there are a few things we need to do to prepa
 1. Log into your Server1. To use Ctrl+Alt+Del in your VM, click "VM" in VMware and select "Send Ctrl+Alt+Del".
 2. You should be met with the Server Manager Dashboard. If not, click on the Server Manager icon at the bottom of the screen.
 3. A pop up will appear asking you to "Try Windows Admin Center/ Azure Arc". Click "Don't show me this message again" and close the pop-up.
-4. Click "Local Server" on the left side of the screen. 
+4. Click "Local Server" on the left side of the screen.
 5. In the "Properties" window, look for "Time Zone" and make sure it is set to "UTC -05:00 Eastern Time". If it is something else, change it to our time zone.
 6. Next, click on the semi-randomized name next to "Computer Name". Then click "Change".
 7. Change the computer name to "S1-SenecaID" (for example, my Seneca ID is hheim so my Server1 computer name would be "S1-hheim").
@@ -103,12 +90,12 @@ Now that our Server1 is installed, there are a few things we need to do to prepa
 
 ### Part 2-1: Installing Windows Server 2025 Core (No GUI)
 
-Now we are going to install our second server, Server2. This installation will be very similar to the first, although the server will look quite different when we are done. 
+Now we are going to install our second server, Server2. This installation will be very similar to the first, although the server will look quite different when we are done.
 
 1. Click "Create a New Virtual Machine" on the Home tab in VMWare Workstation Pro.
 2. Select "Typical" and click "Next".
 3. Select "Installer disc image file (iso)" and then click "Browse".
-4. Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO. 
+4. Navigate to the ISOs directory on your external hard drive and open the Windows Server 2025 ISO.
 5. You should notice a message below the path to the ISO that says "Windows Server 2025 detected. This operating system will use Easy Install". Click "Next"
 6. Enter your Windows Server 2025 product key (which should be in your "Keys" file on your external hard drive).
 7. For "Version of Windows to Install" change it to "Windows Server 2025 Datacenter Core". **VERY IMPORTANT!!**
@@ -116,15 +103,15 @@ Now we are going to install our second server, Server2. This installation will b
 9. For "Password", enter "P@ssw0rd".
 10. Do **NOT** check "Log on automatically". Click "Next".
 11. For "Virtual Machine name", enter "Server2".
-12. For "Location", click "Browse" and navigate to and select the directory called "Server2" in your external hard drive and click "OK". Confirm the path to your "Server2" directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click "Next". 
+12. For "Location", click "Browse" and navigate to and select the directory called "Server2" in your external hard drive and click "OK". Confirm the path to your "Server2" directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click "Next".
 13. Leave the disk size at 60 GB and select "Store virtual disk as a single file". Click "Next"
 14. Click "Customize Hardware".
 15. Change "Memory" to 4096 MB.
 16. Change "Processors" to 1 Processor and 4 cores per processor. Click "Close". Click "Finish".
 17. The virtual machine will launch and the installation will begin. You will be asked to put your product key in once again. Do so and click "Next".
-    - *to "paste" into the VM, click inside the Product Key box so that the cursor is seen inside it, then click "Edit" in VMWare and select "Paste".
+    - \*to "paste" into the VM, click inside the Product Key box so that the cursor is seen inside it, then click "Edit" in VMWare and select "Paste".
 18. From here, most of the installation will be automatic. The VM will restart several times during the installation.
-19. Eventually you will land on the Windows Server 2025 Core config screen and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click "Yes" and your VM will reboot. 
+19. Eventually you will land on the Windows Server 2025 Core config screen and VMWare Tools will auto-install. When it is finished, it will ask you to restart the system. Click "Yes" and your VM will reboot.
 
 ### Part 2-2: Windows Server 2025 Core Post-Installation Tasks
 
@@ -157,13 +144,15 @@ In this part we are going to install our Client1 system which will be running Wi
 1. Click "Create a New Virtual Machine" on the Home tab in VMWare Workstation Pro.
 2. Select "Typical" and click "Next".
 3. Select "Installer disc image file (iso)" and then click "Browse".
-4. Navigate to the ISOs directory on your external hard drive and open the Windows 11 ISO. 
+4. Navigate to the ISOs directory on your external hard drive and open the Windows 11 ISO.
 5. You should notice a message below the path to the ISO that says "Windows 11 x64 detected. Click "Next"
 6. For "Virtual Machine name", enter "Client1".
 7. For "Location", click "Browse" and navigate to and select the directory called "Client1" in your external hard drive and click "OK". Confirm the path to your "Client1" directory has been selected (this is important, if you create your VM on the lab computer and not your external hard drive, it will be lost when you turn off the computer). Click "Next".
 8. Windows 11 uses TPM hardware to encrypt certain important files. VMware Worksation adds the TPM module automatically as long as you select the right options:
-  - Choose Encryption Type: Only the files needed to support a TPM are encrypted.
-  - Password: Your normal VM password.
+
+- Choose Encryption Type: Only the files needed to support a TPM are encrypted.
+- Password: Your normal VM password.
+
 9. Click "Next".
 10. Leave the disk size at 64 GB and select "Store virtual disk as a single file". Click "Next"
 11. Click "Customize Hardware".
@@ -189,10 +178,9 @@ In this part we are going to install our Client1 system which will be running Wi
 31. Windows will then do some more updates. This may take some time and the system may reboot.
 32. When it is done with updating, you will land on the Windows 11 desktop.
 
-
 ### Part 3-2: Post-installation Tasks for Windows 11
 
-Now that our Client1 is installed, there are a few things we need to do to prepare it for our labs similar to what we did on Server1 and Server2. 
+Now that our Client1 is installed, there are a few things we need to do to prepare it for our labs similar to what we did on Server1 and Server2.
 
 We will begin with the basics - time zone and computer name.
 
@@ -204,9 +192,9 @@ We will begin with the basics - time zone and computer name.
 6. When the computer comes back up, log in and click on the Windows icon at the bottom of the screen (4 blue squares). Type "updates" and click "Check for Updates".
 7. Click the blue "Check for Updates" button in the Windows Update window.
 8. While they are downloading , scroll down and click on "Advanced Options".
-10. Turn the "Receive updates to other Microsoft products" toggle from **Off** to **On**.
-11. Click "Windows Update" at the top of the screen to get back to the main Updates window.
-12. Like on Server1, get your Client1 fully updated. This may require some time and reboots but keep updating until you are met with the "You're up to date" message.
+9. Turn the "Receive updates to other Microsoft products" toggle from **Off** to **On**.
+10. Click "Windows Update" at the top of the screen to get back to the main Updates window.
+11. Like on Server1, get your Client1 fully updated. This may require some time and reboots but keep updating until you are met with the "You're up to date" message.
 
 Now that your system is fully up to date, there is one more thing we have to do. Recall that with Server1 and Server2, something called VMWare tools was automatically installed when the initial installation was complete. This will not happen on Windows 11. We will have to install it manually.
 
@@ -219,9 +207,22 @@ Now that your system is fully up to date, there is one more thing we have to do.
 
 Congratulations! You now have three fully functioning virtual machines that you will be using for the rest of the course.
 
+## Investigation 2: Backing up your VMs (Optional)
+
+It is a good idea to backup your VMs when you reach the end of this lab. That way, if one of your VMs becomes corrupted, you don't have to re-install all over again.
+
+The easiest way to to do this is as follows:
+
+1. Ensure all your VMs are shut down.
+2. Navigate to the directory on your hard drive where you are storing the VM directories (Server1, Server2, Client1).
+3. Right-click on each directory and "Compress to" >> "ZIP file". Compress them one at a time. Do not try to do 2 or all of them at once.
+
+This will likely take a long time as your VM files are fairly large. But when the compression is done, you will have a zipped (compressed) copy of each of your VM directories. You can then restore that backup should one of your VMs become corrupted or otherwise broken.
+
 ## Lab 2 Sign Off
 
 Take the following 3 screenshots:
+
 - Log into Server1. Go into the Server Manager on Server1, click on "Local Server", and take a screenshot of the entire "Properties" window.
 - Log into Server2. Take a screenshot of the "Welcome to Windows Server 2025 Datacenter" screen.
 - Log into Client1. Go into the Windows Update window and take a screenshot that shows the "You're up to date" message.

@@ -28,17 +28,6 @@ PowerShell is now an essential skill for IT and server administrators. Windows I
 PowerShell uses commands called CMDLETS (pronounced command-lets). They are English-like commands and use a VERB-NOUN format.
 It is easy for Linux and Windows Command Line users to get a quick start with PowerShell because of built-in aliases and syntax that is easy to pick up on the fly.
 
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- Learn how to use Powershell CMDLETS and syntax
-- Use a variety of Powershell CMDLETS to:
-  - start and stop services
-  - display system information
-  - set and use aliases
-- Create and maintain a Powershell profile
-
 ## Investigation 0: Reconnecting to the Internet
 
 In lab 4, we changed Server1's IP address and network settings so that it could no longer connect to the Internet. We are going to need the Internet for this lab so we are going to temporarily revert back to the old settings. We will change back to a static IP at the end of lab 7.

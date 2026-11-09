@@ -11,20 +11,14 @@ description: Active Directory
 
 This week's lab will cover the following:
 
-- Workgroups
-- Adding and Modifying Users
-- Creating and Modifying Groups
-- Shares and Permissions
+- Installing Active Directory
+- Promoting your server to a domain controller
+- Managing Active Directory users and groups
+- Adding another computer to your domain
 
 ## Lab 8 Notes
 
-You will be running all 3 VMs at once in this lab. You will likely notice some stuttering and slow down. Please be patient and do not force any VMs off without checking with your teacher.
-
-## Objectives
-
-By the end of this lab, you will be able to:
-
--
+You will be running 2 VMs at once in this lab. You will likely notice some stuttering and slow down. Please be patient and do not force any VMs off without checking with your teacher.
 
 ## Investigation 0: Removing DNS and Creating a Public Share
 

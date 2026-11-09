@@ -14,25 +14,18 @@ This week's lab will cover the following:
 - Gathering the necessary materials to run this course:
   - External hard drive
   - Windows Server 2025 ISO
-  - Windows 11 ISO   
+  - Windows 11 ISO
+  - Windows Server 2025 and Windows 11 Product License Keys
 - Establishing a networking scheme for our virtual machines
 - Using KVM to replicate physical network with a virtual one
 
 ## Lab 1 Notes
 
-Lab 1 is a preparation lab and should not take you long but it MUST be completed before you can begin Lab 2. 
+Lab 1 is a preparation lab and should not take you long but it MUST be completed before you can begin Lab 2.
 
 If you have not already done so, please make sure you read through the entire [MST100 Welcome Page](https://seneca-ictoer.github.io/MST100/) so that you understand how this course is run.
 
 Once you have done so, proceed with this lab.
-
-## Objectives
-
-By the end of this lab, you will be able to:
-
-- Acquire Windows Server 2025 Datacenter and Windows 11 Education installation media and your individual product key from Azure Education and store them securely.
-- Access VMware Workstation on a Seneca Lab PC (or install it on a personal PC).
-- Establish a networking scheme for your virtual machines
 
 ## Investigation 1: Downloading Installation Media
 
@@ -78,11 +71,13 @@ Now that we have our ISOs we are going to store them on our external hard drive 
 2. Navigate to your external hard drive.
 3. Create a directory called "MST100" and move into that directory.
 4. Inside the MST100 directory create the following 5 directories:
-  - "ISOs"
-  - "Notes"
-  - "Server1"
-  - "Server2"
-  - "Client1"
+
+- "ISOs"
+- "Notes"
+- "Server1"
+- "Server2"
+- "Client1"
+
 5. Finally, find the Windows Server 2025 Datacenter and Windows 11 Education ISOs on your computer (probably in your Downloads directory) and copy them into your newly created "ISOs" directory.
 6. Find the text file that has your Windows security key in it and copy it into the "Notes" directory on your external hard drive.
 

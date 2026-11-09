@@ -185,4 +185,4 @@ Let's try logging in as another user.
 
 You should have 7 screenshots that you have been taking throughout this lab.
 
-Put all 7 of these screenshots into a text document and upload it to the Lab 8 Submission page in Blackboard.
+Put all 7 of these screenshots into a text document and upload it to the Lab 9 Submission page in Blackboard.

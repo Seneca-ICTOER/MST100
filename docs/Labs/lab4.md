@@ -18,7 +18,7 @@ This week's lab will cover the following:
 
 ## Lab 4 Notes
 
-This lab is going to introduce you to some key configurations related to networking in Windows. It is important to understand that the network you are working in is _virtual_. All network traffic to and from your virtual machines flows through your host operating system.............................
+This lab is going to introduce you to some key configurations related to networking in Windows. It is important to understand that the network you are working in is _virtual_. All network traffic to and from your virtual machines flows through your host operating system which acts as a router, a DHCP server, and a NAT gateway all in one. While this allows all of our virtual machines to connect to the Internet (which we needed to install updates in lab 2), it also prevents us from treating our virtual network as an isolated network that we can fully control. As such, we will be changing the network configurations on our VMs from automatic (DHCP) to manual (static). This will allow us to set up some basic network services but it will also prevent our VMs from connecting to the Internet. You will want to make sure your VMs are fully up to date before proceeding with this lab.
 
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
@@ -46,7 +46,7 @@ ipconfig /all
 
 Notice that we are given a lot more information. So what are we looking for?
 
-There are several pieces of information here that are useful to us. The result of the first command we ran gives us the IP address and its subnet mask, as well as the default gateway (or the router/device it looks to in order to send data outside of the local network.
+There are several pieces of information here that are useful to us. The result of the first command we ran gives us the IP address and its subnet mask, as well as the default gateway (or the router/device it looks to in order to send data outside of the local network).
 
 The second command gives us more details about the networking information associate with this machine. Specifically for us, we are interested in the DHCP information and the DNS information.
 
@@ -138,7 +138,7 @@ Now that you have a general idea of how to get basic network information, we are
 
 ### Part 3: Addressing Server2
 
-Next, we will change the IP information on Server2. This is actually easier than Server1 because we will be using Powershell.
+Next, we will change the IP information on Server2. This is actually easier than Server1 because we will be using PowerShell.
 
 1. Power on and log into Server2
 2. Enter "15" to go into the Powershell command line.

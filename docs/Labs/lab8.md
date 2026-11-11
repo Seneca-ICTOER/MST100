@@ -18,6 +18,14 @@ This week's lab will cover the following:
 
 ## Lab 8 Notes
 
+This lab is going to take a look at local users and groups, meaning users and groups that are local and/or dedicated to one operating system on one physical machine. Generally the use of users and groups at a local level is reserved for basic home use or very small companies. It is far more likely that you will be using Active Directory Users and Groups when you actually enter the IT industry. However, it should be noted that even at an enterprise level, local users and groups may still be used for specific tasks on specific machines so it is important to understand how to administer them.
+
+Furthermore, you will also be taking your first look at shares and permissions in this lab. Shares and permissions in Windows can get somewhat complicated when integrating between those that are local and those that are based out of Active Directory. We won't get very deep into this here but you will set up some basic access to directories that will be "shared" and those directories will also have "local" permissions.
+
+A key takeaway here is that "share" permissions and "local" (NTFS) permissions are two different things. "Share" permissions control access on a network level. A user that connects via the network to a particular "shared" directory has a specific set of permissions for what they can do in that directory. That same user might have "local" permissions on that directory as well and those permissions may not be the exact same as their "share" permissions. Generally, the permissions that will take effect for a particular user are the permissions that are most restrictive between the two. This is associated with a policy called the "Principle of Least Privilege" - you generally only want users and groups to have access to what they need and nothing more. Again, this gets somewhat complicated in practice and it gets even more complicated when you consider that some users can be considered both local and network users. As such, we won't be replicating all that nuance in this course. It is important to be aware of it, however.
+
+What you _will_ be doing is setting up both types of permissions in this lab. That way you can see how they are accessed and what they look like. Just be aware that because this is just a small example and (because you will be moving on to the much more common Active Directory method in lab 9) what is done here in lab 8 is somewhat simplified.
+
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
 ## Investigation 1: Creating and Joining a Workgroup

@@ -28,7 +28,18 @@ Lab 5 will be submitted by providing the commands you would use to accomplish ea
 
 You will need the following commands to accomplish this lab:
 
--
+- cd
+- copy
+- copy nul
+- del
+- dir
+- mkdir, md
+- move
+- rmdir
+- tree
+- type
+
+You may want to practice a bit with these commands before starting lab 5.
 
 ## Investigation 1: Building your Directory Structure
 

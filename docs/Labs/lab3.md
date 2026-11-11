@@ -11,13 +11,50 @@ description: Configuring basic settings in Windows Server and Windows 11
 
 This week's lab will cover the following:
 
+- Exploring a Microsoft Windows Operating System
 - Adding roles in Windows Server
 - Removing roles in Windows Server
 - Learning about and editing the Windows Registry
 
 ## Lab 3 Notes
 
-You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. Also, one screenshot cannot be taken once the lab has been completed so please take care to take your screenshots when instructed to.
+Lab 3 is going to have you explore the Windows operating system a little and then do some basic configuration. If you are familiar with Windows 10/11 you will likely already know about some of what is discussed in Investigation 0. However, it is still a good idea to take some time to look around the operating system.
+
+You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
+
+## Investigation 0: Exploring the Windows Operating System
+
+There are a few basic areas that you should be aware of in Windows 11 and the GUI version of Server 2025. The following information is generally correct for both but things may look slightly different between the two as Windows 11 is an end user / consumer operating system and Server 2025 is a back end administrative operating system. Also, keep in mind that there is almost always more than one way to get to anything in Windows and a good bet to try if you are unsure is to hit the Windows icon at the bottom of the screen (the 4 blue squares) and just start typing what you are looking for.
+
+First let's take a look at two areas where you can find settings for your operating system. Log into Server1.
+
+1. Click the Windows icon at the bottom of the screen. You should see a gear icon labeled "Settings". Click it and take a look at what pops up.
+
+There are many basic settings you can configure here. Much of it will be irrelevant to what we do in this course but it is still worth taking some time to explore what is here. Particularly on Windows 11, this is where you can come and personalize your Windows experience to your liking.
+
+2. Next, click the Windows icon at the bottom of the screen and type in "control". You should see an icon labeled "Control Panel". Click it.
+3. In the top right of the "Control Panel" window, change the "View by" dropdown to "Large icons".
+
+The "Control Panel" is where you will generally find more advanced configuration options in Windows. There are several important icons here. Of particular note:
+
+- Programs and Features: You can see what software is installed on your computer here and you can initialize changes to that software or uninstall it from this window.
+- Network and Sharing Center: This is the starting point for general network configurations on Windows. We will be coming to this area a few times throughout this course.
+- User Accounts: Here you can add, remove, and modify users that are local to this computer. You should only have one right now but in lab 8 you will be adding more.
+- Windows Defender Firewall: Your firewall and its rules can be configured here. We are not going to do much with the firewall in this class but this can be a good place to check if you ever experience network issues.
+
+4. Click the yellow folder icon at the bottom of the screen. This is the "File Explorer".
+
+The "File Explorer" allows you to browse through all the directories and files on your system. You will notice on the left side that there are several directories with special icons (Desktop, Downloads, Documents etc.). These directories are tied to your user. The contents of them will change depending on who is logged in.
+
+5. Click on "This PC". You should see a C: drive and a D: drive.
+
+The Windows C: drive is the hard drive on which your Windows operating system is installed. The D: drive is the CD-ROM drive attached to your computer. Of course, this is not an actual CD-ROM drive, it is a virtual one. Virtual machines use virtual CD-ROM drives for the installation process (as you saw in lab 2). On a real world system, it is unlikely you will have a CD-ROM drive attached.
+
+6. Double click the C: drive. You will see several directories. You can navigate through the Windows directory structure. Do not change or delete anything, though. Doing so can damage the stability of your system.
+
+7. For the last specific setting we will look at here, right click on the desktop and click on "Display setting". Notice the "Scale" option. You can change this to 125% and 150%. This may be useful if you want to increase the size of elements in Windows.
+
+There is much, much more to explore in a Windows operating system. Whether it is in Server 2025 or Windows 11, you are encouraged to play around in them to become better acquainted.
 
 ## Investigation 1: Installing and Removing Roles with a GUI
 

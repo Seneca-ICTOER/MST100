@@ -20,6 +20,8 @@ This week's lab will cover the following:
 
 You will be running 2 VMs at once in this lab. You will likely notice some stuttering and slow down. Please be patient and do not force any VMs off without checking with your teacher.
 
+You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
+
 ## Investigation 0: Removing DNS and Creating a Public Share
 
 Before we can begin with Active Directory, we need to remove the DNS role that we installed in Lab 4. This is because the installation of Active Directory will need to install its own instance of DNS to work alongside it. We will also be creating a directory in which our domain users can store their shares.

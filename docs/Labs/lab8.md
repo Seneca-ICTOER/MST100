@@ -18,7 +18,7 @@ This week's lab will cover the following:
 
 ## Lab 8 Notes
 
-NOTES HERRRRREEEEEE
+You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
 ## Investigation 1: Creating and Joining a Workgroup
 

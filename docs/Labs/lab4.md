@@ -18,6 +18,8 @@ This week's lab will cover the following:
 
 ## Lab 4 Notes
 
+This lab is going to introduce you to some key configurations related to networking in Windows. It is important to understand that the network you are working in is _virtual_. All network traffic to and from your virtual machines flows through your host operating system.............................
+
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
 ## Investigation 1: Exploring Network information and Assigning Static IP Addresses to your Virtual Machines

@@ -20,6 +20,8 @@ This week's lab will cover the following:
 
 Lab 3 is going to have you explore the Windows operating system a little and then do some basic configuration. If you are familiar with Windows 10/11 you will likely already know about some of what is discussed in Investigation 0. However, it is still a good idea to take some time to look around the operating system.
 
+You will also be making changes to the Windows Registry in this lab. It will be reiterated later, but the Windows Registry is very important. It is generally not a good idea to mess around in the Windows Registry if you don't know what you are doing.
+
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
 ## Investigation 0: Exploring the Windows Operating System

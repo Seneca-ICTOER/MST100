@@ -312,15 +312,15 @@ Now that our webpage is updated, we need to set up DNS so that we can access tha
 
 ### Part 3: Testing our Web Server
 
-Before we move on to testing our configurations, take a moment to recall how we configured Server1, Server2, and Client1's network settings. In addition to the IP address and subnet mask, we also entered in a preferred DNS IP address. This was the IP address of Server1 (10.10.xxx.10). What this means is that all 3 VMs will look to Server1 to resolve IP addresses to FQDNs and vice versa. Now that we have created a host (A) record, if we try to access the FQDN via a web browser we should connect to the Web Page that is being hosted on Server1 since its FQDN matches its IP address in the host (A) record.
+Before we move on to testing our configurations, take a moment to recall how we configured Server1, Server2, and Client1's network settings. In addition to the IP address and subnet mask, we also entered in a preferred DNS IP address for Server1 and Client1. This was the IP address of Server1 (10.10.xxx.10). What this means is that all 3 VMs will look to Server1 to resolve IP addresses to FQDNs and vice versa. Now that we have created a host (A) record, if we try to access the FQDN via a web browser we should connect to the Web Page that is being hosted on Server1 since its FQDN matches its IP address in the host (A) record.
 
-1. To test the new domain name locally, open your web browser and type the domain name you entered above (http://server1.senecaID.com), in the address bar field. Your webpage should display as it did before. This proves that your DNS Server (that you just configured) is resolving the name (server1.senecaID.com) to the correct IP address to find the web page on your web server. (Note - make sure you specify http and not https. It will want to default to https.)
+1. To test the new domain name locally, on Server1 open your web browser and type the domain name you entered above (http://server1.senecaID.com) in the address bar field. Your webpage should display as it did before. This proves that your DNS Server (that you just configured) is resolving the name (server1.senecaID.com) to the correct IP address to find the web page on your web server. (Note - make sure you specify http and not https. It will want to default to https.)
 
 If your webpage does not appear, check your Preferred DNS settings on Server1 to make sure you have entered the correct IP address (10.10.xxx.10) and that you created the host (A) record correctly.
 
 Now let's test to see if we can connect to this web server from Client1.
 
-2. Log in to Client1, open a web browser and enter "http://server1.senecaid.com"
+2. Log in to Client1, open a web browser and enter "http://server1.senecaID.com"
 
 You should see the same web page you saw on Server1 and can confirm it is the same page if you see your name in the tab title.
 

@@ -20,7 +20,7 @@ This week's lab will cover the following using Windows Command Line:
 
 Lab 5 is different from the other labs in this course. You will not be creating a document with screenshots in this lab. Instead, this lab will ask you to first create a directory structure and then perform a series of tasks using commands in that structure.
 
-Lab 5 will be submitted by providing the commands you would use to accomplish each task specified and entering that commands into the Lab 5 submission page. You will need to provide 2 answers for each task: the correct command using an absolute path and the correct command using a relative path.
+Lab 5 will be submitted by providing the commands you would use to accomplish each task specified and entering those commands into the Lab 5 submission page.
 
 ## Objectives
 
@@ -46,7 +46,12 @@ You may want to practice a bit with these commands before starting lab 5.
 1. Begin by logging into Server1.
 2. Open the Windows Command Prompt by clicking the blue Windows button at the bottom of the screen, typing "cmd" and hitting "Enter".
 3. The command prompt will open and you should be placed in the C:\Users\Administrator\ directory.
-4. Navigate to the root directory of the C: drive.
+4. Navigate to the root directory of the C: drive:
+
+```bash
+cd c:\
+```
+
 5. You will now create the following directory structure:
 
 ![MST100 Lab 5 Directory Structure](/img/MST100Lab5Directories.png)

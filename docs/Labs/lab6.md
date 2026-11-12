@@ -42,8 +42,8 @@ In lab 4, we changed Server1's IP address and network settings so that it could 
 
 In this exercise we will configure the Powershell Console to open in a directory called “MyScripts.” We will be doing everything on Server1.
 
-1. To open Powershell, type Powershell from the Run command, or click the Powershell icon on the task bar.
-2. First, let's create our new directory. Enter the following command:
+1. To open Powershell, click the Windows icon at the bottom of the screen and type "Powershell". Then click on "Windows PowerShell".
+2. First, let's create a new directory. Navigate to the root of your C: drive and enter the following command:
 
 ```bash
 New-Item C:\MyScripts -type directory
@@ -59,10 +59,10 @@ New-Item C:\MyScripts\file2.txt -type file
 New-Item C:\MyScripts\file3.txt -type file
 ```
 
-Again, you should see confirmation of your commands successfully running.
+Again, you should see confirmation of your commands successfully running. Close the PowerShell window.
 
 4. Now let's create a special shortcut on our desktop that we can use to open Powershell in a specific directory. Navigate to your desktop.
-5. Click the blue Windows icon at the bottom of the screen. You should see a "Windows Powershell" icon. If you don't, type in "Powershell" and it will appear.
+5. Click the Windows icon at the bottom of the screen. You should see a "Windows Powershell" icon. If you don't, type in "Powershell" and it will appear.
 6. Right-click the "Powershell" icon and click on "Open file location". A window will appear that contains two "Powershell" icons.
 7. Right-click the icon **that doesn't have the (x86)** in its name and click "Properties". A window with a few fields will appear. Look for the "Target:" field.
 8. Copy the contents of the "Target:" field.
@@ -86,7 +86,7 @@ Let's try a few basics.
 1. To see a list of CMDLETs available in PowerShell enter the following cmdlet:
 
 ```bash
-get-command
+Get-Command
 ```
 
 Unfortunately, this command will output a lot of information so we would have to scroll all the way back up to see it all.
@@ -94,7 +94,7 @@ Unfortunately, this command will output a lot of information so we would have to
 2. Let's try that again but using "more" to make the output more manageable:
 
 ```bash
-get-command | more
+Get-Command | more
 ```
 
 That will allow us to scroll through the output more cleanly. (You can hit "q" while in the list to get back to the prompt)
@@ -102,7 +102,7 @@ That will allow us to scroll through the output more cleanly. (You can hit "q" w
 3. Next, let's list all the commands that use a specific verb, such as "Get". Enter the following:
 
 ```bash
-get-command -Verb Get
+Get-Command -Verb Get
 ```
 
 Again, you can pipe to "more" to make the output more manageable if you like.
@@ -116,7 +116,7 @@ The "Help" CMDLET noun is very useful in retrieving information about particular
 1. To begin, enter the following:
 
 ```bash
-get-help
+Get-Help
 ```
 
 Scroll through the output. Notice the part where it mentions downloading and installing help files.

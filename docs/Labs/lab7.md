@@ -13,7 +13,7 @@ This week's lab will cover the following:
 
 - Installing features in PowerShell
 - Importing modules in PowerShell
-- Creating funtions in PowerShell
+- Creating functions in PowerShell
 - Using PowerShell Integrated Scripting Environment
 - Creating and running a script in PowerShell
 

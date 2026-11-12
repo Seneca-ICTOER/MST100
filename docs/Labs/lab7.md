@@ -423,7 +423,7 @@ We now have a functioning script that uses variables and conditional logic to ou
 
 ### Part 4: Commenting
 
-Comments are important because they explain each part of our script. This is useful for us as the script creator for when we walk away from a partially completed script to come back to it later but also in case someone else wants to use our script. The comments ensure anyone looking through it understands what the script is meant to do and how it works. So let's add comments to our scritp. We will also clean up our script and add in a date capture while we are at it.
+Comments are important because they explain each part of our script. This is useful for us as the script creator for when we walk away from a partially completed script to come back to it later but also in case someone else wants to use our script. The comments ensure anyone looking through it understands what the script is meant to do and how it works. So let's add comments to our script. We will also clean up our script and add in a date capture while we are at it.
 
 1. Change your entire script to:
 
@@ -519,9 +519,9 @@ Set-ExecutionPolicy RemoteSigned
 
 Before moving on to lab 8, make sure you change Server1's IP settings back what they were before lab 6. Go back and check lab 4 if you need a reminder for how to do this but make sure the following is set before moving on:
 
-IP Address: 10.10.xxx.10
-Subnet Mask: 255.255.255.0
-Preferred DNS server: 10.10.xxx.10
+- IP Address: 10.10.xxx.10
+- Subnet Mask: 255.255.255.0
+- Preferred DNS server: 10.10.xxx.10
 
 ## Lab 7 Sign Off
 

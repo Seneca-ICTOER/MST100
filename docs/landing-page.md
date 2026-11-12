@@ -8,8 +8,6 @@ description: Landing Home Page for MST100
 
 # Welcome to MST100 - Introduction to Microsoft Server
 
-Pardon my mess. This page is under construction.
-
 ## What This Course is About
 
 This course is an introduction to administration and networking on Microsoft Server 2025. In this course, you will use Virtual Machines to create a small virtual network in which you will learn how to:

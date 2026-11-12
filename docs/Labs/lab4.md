@@ -77,11 +77,18 @@ The "ipconfig /release" and "ipconfig /renew" commands do similar things. The "/
 
 Either way, it is important to remember the distinction between those two commands.
 
-Keep in mind that right now, VMware is effectively acting as the default gateway, DNS server, and DHCP server. Due to the virtual nature of our network, VMware and the host OS control all of these networking services (again, another intricacy of a virtual network).
+Keep in mind that right now, VMware is effectively acting as the default gateway, DNS server, and DHCP server. Due to the virtual nature of our network, VMware and the host OS control all of these networking services (another intricacy of a virtual network).
 
 Now let's do some basic network testing.
 
-9. Enter "ping google.com" into the command prompt. You should see 4 replies appear. This tells you that your Server1 machine was able to contact the website "google.com" (probably hosted on a 142.x.x.x IP address). Pings are a useful tool to test network connectivity to devices that are on both our internal network and networks external to our own.
+9. Enter the following into the command prompt:
+
+```bash
+ping google.com
+```
+
+You should see 4 replies appear. This tells you that your Server1 machine was able to contact the website "google.com" (probably hosted on a 142.x.x.x IP address). Pings are a useful tool to test network connectivity to devices that are on both our internal network and networks external to our own.
+
 10. Try the following 3 commands:
 
 ```bash
@@ -123,12 +130,16 @@ Now that you have a general idea of how to get basic network information, we are
 7. Click "Properties" in the window that appears.
 8. Double-click "Internet Protocol Version 4 (TCP/IPv4)".
 9. Click the "Use the following IP address: button and fill in the three fields as such:
-   IP address: 10.10.xxx.10 (replace xxx with your dedicated number)
-   Subnet Mask: 255.255.255.0
-   Default Gateway: Leave Blank
+
+- IP address: 10.10.xxx.10 (replace xxx with your dedicated number)
+- Subnet Mask: 255.255.255.0
+- Default Gateway: Leave Blank
+
 10. Click the "Use the following DNS server addresses" button and fill in the two fields as such:
-    Preferred DNS server: 10.10.xxx.10 (replace xxx with your dedicated number)
-    Alternate DNS server: Leave Blank
+
+- Preferred DNS server: 10.10.xxx.10 (replace xxx with your dedicated number)
+- Alternate DNS server: Leave Blank
+
 11. Click "OK", then click "OK" again, then click "Close".
 12. Bring up your command prompt and use "ipconfig" to confirm that the correct IP address and subnet mask are assigned to Server1.
 
@@ -143,9 +154,10 @@ Next, we will change the IP information on Server2. This is actually easier than
 1. Power on and log into Server2
 2. Enter "15" to go into the Powershell command line.
 3. Enter the following commands:
-   **- Note - Be careful with these commands. Typos will cause problems. Double check your commands before running them.**
-   **- Note - Your network adapter may not be named "Ethernet0" the output of the "Get-NetAdapter" command will tell you your adapter name.**
-   **- Note - Replace "xxx" with your assigned number.**
+
+**- Note - Be careful with these commands. Typos will cause problems. Double check your commands before running them.**
+**- Note - Your network adapter may not be named "Ethernet0" the output of the "Get-NetAdapter" command will tell you your adapter name.**
+**- Note - Replace "xxx" with your assigned number.**
 
 ```bash
 Get-NetAdapter
@@ -165,11 +177,13 @@ New-NetIPAddress -InterfaceAlias "Ethernet0" -IPAddress 10.10.xxx.20 -PrefixLeng
 
 1. Power on and log in to Client1.
 2. Using the same instructions you used for Server1, give Client1 the following configurations:
-   IP address: 10.10.xxx.100
-   Subnet mask: 255.255.255.0
-   Default gateway: Leave Blank
-   Preferred DNS Server: 10.10.xxx.10 (replace xxx with your dedicated number)
-   Alternate DNS Server: Leave Blank
+
+- IP address: 10.10.xxx.100
+- Subnet mask: 255.255.255.0
+- Default gateway: Leave Blank
+- Preferred DNS Server: 10.10.xxx.10 (replace xxx with your dedicated number)
+- Alternate DNS Server: Leave Blank
+
 3. Open the command prompt and run "ipconfig"
 
 **Screenshot 3: Take a screenshot of your Client1 command prompt showing the the correct IP address and subnet mask**

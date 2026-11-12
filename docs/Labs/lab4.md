@@ -155,9 +155,9 @@ Next, we will change the IP information on Server2. This is actually easier than
 2. Enter "15" to go into the Powershell command line.
 3. Enter the following commands:
 
-**- Note - Be careful with these commands. Typos will cause problems. Double check your commands before running them.**
-**- Note - Your network adapter may not be named "Ethernet0" the output of the "Get-NetAdapter" command will tell you your adapter name.**
-**- Note - Replace "xxx" with your assigned number.**
+- **Note - Be careful with these commands. Typos will cause problems. Double check your commands before running them.**
+- **Note - Your network adapter may not be named "Ethernet0" the output of the "Get-NetAdapter" command will tell you your adapter name.**
+- **Note - Replace "xxx" with your assigned number.**
 
 ```bash
 Get-NetAdapter

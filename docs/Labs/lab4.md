@@ -123,7 +123,7 @@ Now that you have a general idea of how to get basic network information, we are
 
 1. Minimize your command prompt window.
 2. Click the blue windows icon at the bottom of the screen, type "control panel", and press "Enter".
-3. In the top-right of the Control Panel window, change from "Category" view to "Large Icons".
+3. In the top-right of the Control Panel window, change from "Category" view to "Large Icons" if it isn't already selected.
 4. Click on "Network and Sharing Center".
 5. Click "Change adapter settings" on the left hand side of the window.
 6. You will see one adapter labeled "Ethernet". Double-click it.
@@ -166,7 +166,12 @@ Get-NetIPAddress -InterfaceAlias "Ethernet0" -AddressFamily IPv4 | Remove-NetIPA
 New-NetIPAddress -InterfaceAlias "Ethernet0" -IPAddress 10.10.xxx.20 -PrefixLength 24
 ```
 
-4. Reboot Server2.
+4. Reboot Server2 with:
+
+```bash
+shutdown /r /t 0
+```
+
 5. When it comes back up log in, go back to the command line, and run "ipconfig" to confirm your IP settings have saved.
 
 **Screenshot 2: Take a screenshot of your Server2 command prompt showing the the correct IP address and subnet mask**
@@ -277,10 +282,20 @@ First, we will make a small change to the default webpage that comes with IIS, j
 1. In Server Manager, from the Tools pull-down menu (in the upper-right corner of the Server Manager), find and run "Internet Information Services (IIS) Manager".
 2. In the left pane, expand the tree under your server name until "Default Web Site" appears.
 3. Right-click on the Default Web Site and choose Explore.
-4. From the new Window you can modify your starter web site by opening the file iisstart (the HTML file, NOT the PNG file) in Notepad. You will be editing HTML code in this file. To make a basic modification to the site, change the title of the page by modifying the text that appears between the \<title\> tags to include your name. You may also make any other modifications you like (not required). Save and exit the file.
-5. To view your web page locally, open a web browser, and type 127.0.0.1 in the browser address bar. (Remember, 127.0.0.1 is the loopback address and not your actual IP address.) The default IIS webpage should appear (an image with a bunch of blue squares and "Welcome" written in different languages), and the tab title should have your changes. As long as you can see your name in the tab title you have edited the HTML file correctly.
+4. From the new Window you can modify your starter web site by opening the file iisstart (the HTML file, NOT the PNG file) in Notepad. You will be editing HTML code in this file.
 
-**_MAYBE USE AI HERE TO MAKE A SIMPLE HTML PAGE??_**
+Since we are just using this file to test out the Microsoft web server (IIS), the contents of this file don't really matter as long as you change it enough to show that you did make a change. But... this is a good opportunity to try out some basic AI generation. We will use Microsoft Copilot (this is a Microsoft course after all).
+
+5. Log into your Seneca email in the browser. When you are logged into your Seneca email, you will see 9 dots in a square shape in the top-left corner. Click that and then click "Microsoft 365 Copilot".
+6. Try the following prompt:
+
+_Create a simple HTML page for use as the IIS default page on Windows Server 2025. Display a heading that says "IIS is Working!" and display my name underneath it. Add today's date. Use only basic HTML and an inline style that centers the text on the page. The background of the website should be light blue. Return only the HTML code._
+
+This is just a simple example prompt. Feel free to play around with it and generate something more fun or to your liking. Change the fonts or the colours or the text as you please. Just don't make it too complicated.
+
+7. When you have your code, replace all the code in the "iisstart.htm" file with the code you have generated and then save and exit the file.
+
+8. To view your web page locally, open a web browser, and type 127.0.0.1 in the browser address bar. (Remember, 127.0.0.1 is the loopback address and not your actual IP address.) You should see your newly modified web page.
 
 ### Part 2: Configuring DNS on Server1
 

@@ -177,7 +177,7 @@ shutdown /s /t 0
 
 ## Investigation 3: The Windows Registry
 
-The Windows Registry is a critically important part of any Microsoft Windows operating system. It is essentially a database that stores all computer, system, application and user settings. More importantly, it is referenced by Windows for just about every operation that can occur on the OS. It cannot be overstated just how important the Registry is and how important it is to not mess around in it.
+The Windows Registry is a critically important part of any Microsoft Windows operating system. It is essentially a database that stores all computer, system, application and user settings. More importantly, it is referenced by Windows for just about every operation that can occur on the OS. It cannot be overstated just how important the Registry is and how important it is to **not mess around in it**.
 
 In this next section we are going to mess around in the Registry.
 
@@ -190,7 +190,10 @@ Entries in the registry are called "Keys". They vary widely in structure and fun
 
 1. Power on Server1 and log in.
 2. Click the blue Windows button at the bottom of the screen and type "run" and hit "Enter".
-3. The "Run" dialogue box will appear. Enter "regedit" and click "OK". The Registry Editor window will appear. _Note: Take extra care when navigating the Registry. There are many directories that appear as duplicates down different paths of the registry directory tree and you want to make sure you are in the right place before making any changes. Changes made in the wrong place can end in disastrous results._
+3. The "Run" dialogue box will appear. Enter "regedit" and click "OK". The Registry Editor window will appear.
+
+- _Note: Take extra care when navigating the Registry. There are many directories that appear as duplicates down different paths of the registry directory tree and you want to make sure you are in the right place before making any changes. Changes made in the wrong place can end in disastrous results._
+
 4. Navigate to the following path in the Registry Editor: HKEY_LOCAL_MACHINE\ SOFTWARE\ Microsoft\ Windows\ CurrentVersion\ policies\ system
 5. If you are in the right place you will see the "legalnoticecaption" and "legalnoticetext" keys. Click "File" in the top-left of the Registry Editor window and then click "Export".
 6. Name your backup "RegistryLegalNotice.reg" and save it to the C: drive.
@@ -202,8 +205,8 @@ Entries in the registry are called "Keys". They vary widely in structure and fun
 
 Now that we have a backup, we can proceed to modify the legal keys.
 
-1. Back in the Registry Editor, double click on the legalnoticecaption key. Enter the value as "This is a Secure PC" and click "OK".
-2. Double click on the legalnoticetext key. Enter the value as "Only authorized users can log into this computer and use this network. Non-authorized users will be recorded and prosecuted." and click "OK".
+1. Back in the Registry Editor, double click on the "legalnoticecaption" key. Enter the value as "This is a Secure PC" and click "OK".
+2. Double click on the "legalnoticetext" key. Enter the value as "Only authorized users can log into this computer and use this network. Non-authorized users will be recorded and prosecuted." and click "OK".
 3. Click "View" at the top of the editor and then "Refresh".
 4. Close the Registry Editor and reboot Server1.
 
@@ -219,7 +222,7 @@ Keys can be modified but we can also add keys for new functionality or if keys a
 2. Navigate to the following path (BE CAREFUL and double check where you are!): HKEY_LOCAL_MACHINE\ SOFTWARE\ Microsoft\ Windows NT\ CurrentVersion
 3. If you are in the right place you will see the several keys with "Build" in the name at the top of the list.
 4. Right-click in the white space where the keys are stored and click "New">>"String Value".
-5. Name it "RegisteredOwner",press "Enter", then double click it and enter your name for its value.
+5. Name it "RegisteredOwner", press "Enter", then double click it and enter your name for its value.
 6. Again, right-click in the white space where the keys are stored and click "New">>"String Value".
 7. Name it "RegisteredOrganization",press "Enter", then double click it and enter "Seneca Polytechnic" for its value.
 8. Click "View" at the top of the editor and then "Refresh".

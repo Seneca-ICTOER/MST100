@@ -23,6 +23,8 @@ Windows PowerShell is an updated, more powerful version of the command line. It 
 While PowerShell is a command line interface, it is more powerful and flexible than the traditional Windows Command Line. It supports complex decision making,
 connecting to a wide variety of data sources, and can even be used when building graphical user interfaces.
 
+It is also **Object-Oriented**. This means that PowerShell command output is not displayed as plain text, it is displayed as the object properties of whatever object it is referring to. This makes it easier to parse out the specific output that you are looking for. Instead of having to use text manipulators and regular expressions (which can get very complicated for pulling specific output), you can simply refer to a property of the object you are outputting.
+
 PowerShell is now an essential skill for IT and server administrators. Windows IT professionals who only use a GUI interface for server and network management will still need to know how to use PowerShell as it is by far the most efficient method to accomplish many tasks. It is constantly being developed and there are hundreds of commands.
 
 PowerShell uses commands called CMDLETS (pronounced command-lets). They are English-like commands and use a VERB-NOUN format.
@@ -383,3 +385,44 @@ This will give you the contents of your profile file.
 You should have 6 screenshots that you have been taking throughout this lab.
 
 Put all 6 of these screenshots into a text document and upload it to the Lab 6 Submission page in Blackboard.
+
+## PUT THIS SOMEWHERE
+
+## Understanding "Objects"
+
+If you are working in the Windows Command Line and you run the "dir" command, you will get a listing of the directory's contents. That output is displayed as "plain text" - essentially just a string of letters/numbers/symbols/characters that the shell puts together to communicate to the user what the result of the command was. This output can be manipulated (cut, trimmed, re-arranged) to get a cleaner, easier-to-read output or to pipe it into something else. The issue is that the methods used to manipulate the output can get somewhat complicated and not easily readable by humans which can make those sorts of tasks a lot of work.
+
+Let's use a really simple example. Let's create a directory with two files in it.
+
+**FIND A BETTER EXAMPLE**
+
+1. In the root of your C: drive, create a directory called "SizeTest"
+2. In that directory, create two files - "File1.txt" and "File2.txt"
+3. Open "File1.txt" in Notepad and enter 10 lines of text and then save your file. Make sure the file is about 2KB in size.
+4. Leave "File2.txt" empty.
+5. Open the Command Line (not PowerShell) and run:
+
+```bash
+for %f in (*) do @if %~zf GTR 1024 echo %f
+```
+
+\*Note that the symbol between the "%" and the "z" is a tilde (~), not a dash.
+
+That command will give us all the files that are bigger than 1KB. But that command is awkward to read as a human. It is fairly short and concise but for someone learning how to run commands and parse data it looks fairly confusing.
+
+Let's try the same thing but with PowerShell.
+
+6. Open PowerShell and navigate to your "SizeTest" directory.
+7. Now run the following in PowerShell:
+
+```bash
+Get-ChildItem | Where-Object { $_.Length -gt 1KB }
+```
+
+The result should be the same, although the output will look a little different.
+
+In our command line command, we had to run a loop that ran through each file, pulled out specific data, and compared it against an integer. Not only is it awkward to read, but
+
+Notice the output. It's extremely messy. Now if we wanted to pull everything that had an event id of "1074", we would have to pipe that initial command
+
+A regular expression is often necessary when you're trying to turn text into data. PowerShell is powerful because the data is already an object (it has effectively already been parsed by default), so you usually don't need the regular expression in the first place.

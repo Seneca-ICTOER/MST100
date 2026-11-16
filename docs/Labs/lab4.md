@@ -20,6 +20,8 @@ This week's lab will cover the following:
 
 This lab is going to introduce you to some key configurations related to networking in Windows. It is important to understand that the network you are working in is _virtual_. All network traffic to and from your virtual machines flows through your host operating system which acts as a router, a DHCP server, and a NAT gateway all in one. While this allows all of our virtual machines to connect to the Internet (which we needed to install updates in lab 2), it also prevents us from treating our virtual network as an isolated network that we can fully control. As such, we will be changing the network configurations on our VMs from automatic (DHCP) to manual (static). This will allow us to set up some basic network services but it will also prevent our VMs from connecting to the Internet. You will want to make sure your VMs are fully up to date before proceeding with this lab.
 
+Investigation 2 of this lab will require you to have two VMs on at once. As was mentioned in lab 2, this may cause your VMs to slow down, stutter, freeze, and/or possibly crash from time to time. If it seems like a VM is freezing or locking up, be patient and give it some time. They will usually return to normal if given a minute or two.
+
 You will be asked to take screenshots along the way in this lab. It is easier to do so rather than having to go back at the end of the lab to take them. The criteria for some screenshots may not easily be replicated once you are at the end of the lab so be sure to take them when told to do so.
 
 ## Investigation 1: Exploring Network information and Assigning Static IP Addresses to your Virtual Machines

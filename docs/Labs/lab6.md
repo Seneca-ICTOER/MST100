@@ -380,49 +380,107 @@ This will give you the contents of your profile file.
 
 **Screenshot 6: Take a screenshot of the output of "type $profile" which should have your alias entry.**
 
-## Lab 6 Sign Off
+## Investigation 4: Understanding "Objects"
 
-You should have 6 screenshots that you have been taking throughout this lab.
+Up until this point you have gotten to know PowerShell a little bit by configuring it and using it a little bit. But if the basic Windows Command Line already exists, why do we now use PowerShell? The answer is the fact that PowerShell is "Object-Oriented".
 
-Put all 6 of these screenshots into a text document and upload it to the Lab 6 Submission page in Blackboard.
+If you are working in the Windows Command Line and you run a ommand, its output is displayed as "plain text" - essentially just a string of letters/numbers/symbols/characters that the shell puts together to communicate to the user what the result of the command was. This output can then be manipulated (cut, trimmed, re-arranged) to get a cleaner, easier-to-read output or to pipe it into something else. The issue is that the methods used to manipulate the output can get somewhat complicated and the commands and their syntax are very old and antiquated. They are not easily readable by humans which can make those sorts of tasks a lot of work and difficult to apply to different sets of data. PowerShell aims to remedy this by not only making the syntax easier to read, but by also applying a sort of logic to the output of all of its commands - a template or formula by which all command output can be retrieved. This is where "Objects" come in.
 
-## PUT THIS SOMEWHERE
+### Part 1: Seeing An Item's Objects
 
-## Understanding "Objects"
-
-If you are working in the Windows Command Line and you run the "dir" command, you will get a listing of the directory's contents. That output is displayed as "plain text" - essentially just a string of letters/numbers/symbols/characters that the shell puts together to communicate to the user what the result of the command was. This output can be manipulated (cut, trimmed, re-arranged) to get a cleaner, easier-to-read output or to pipe it into something else. The issue is that the methods used to manipulate the output can get somewhat complicated and not easily readable by humans which can make those sorts of tasks a lot of work.
-
-Let's use a really simple example. Let's create a directory with two files in it.
-
-**FIND A BETTER EXAMPLE**
-
-1. In the root of your C: drive, create a directory called "SizeTest"
+1. Open a PowerShell terminal and create a directory called "SizeTest" in the root of your C: drive.
 2. In that directory, create two files - "File1.txt" and "File2.txt"
 3. Open "File1.txt" in Notepad and enter 10 lines of text and then save your file. Make sure the file is about 2KB in size.
 4. Leave "File2.txt" empty.
-5. Open the Command Line (not PowerShell) and run:
+5. In the PowerShell terminal, navigate to your "SizeTest" directory and run:
 
 ```bash
-for %f in (*) do @if %~zf GTR 1024 echo %f
+Get-ChildItem
 ```
 
-\*Note that the symbol between the "%" and the "z" is a tilde (~), not a dash.
+You will get the normal display of your directory's contents - your two files.
 
-That command will give us all the files that are bigger than 1KB. But that command is awkward to read as a human. It is fairly short and concise but for someone learning how to run commands and parse data it looks fairly confusing.
-
-Let's try the same thing but with PowerShell.
-
-6. Open PowerShell and navigate to your "SizeTest" directory.
-7. Now run the following in PowerShell:
+6. Now try running:
 
 ```bash
-Get-ChildItem | Where-Object { $_.Length -gt 1KB }
+Get-ChildItem | Get-Member
 ```
 
-The result should be the same, although the output will look a little different.
+You will see many lines appear. These are all the properties/methods that the "Get-ChildItem" CMDLET contains. They can be used to pull a specific piece of data regarding the output of the command. They are "objects" - specific, referenceable entities - associated with the output. So if we want a specific piece of information about a particular file we can request it via the "object" associated with it.
 
-In our command line command, we had to run a loop that ran through each file, pulled out specific data, and compared it against an integer. Not only is it awkward to read, but
+7. For example, let's pull the name and file size of our "Test1.txt" file. Try running:
 
-Notice the output. It's extremely messy. Now if we wanted to pull everything that had an event id of "1074", we would have to pipe that initial command
+```bash
+Get-ChildItem .\Test1.txt | Select-Object Name, Length
+```
 
-A regular expression is often necessary when you're trying to turn text into data. PowerShell is powerful because the data is already an object (it has effectively already been parsed by default), so you usually don't need the regular expression in the first place.
+8. Or we can see when the file was created and when it was last accessed:
+
+```bash
+Get-ChildItem .\Test1.txt | Select-Object CreationTime, LastAccessTime
+```
+
+**Screenshot 7: Take a screenshot of the output of the previous two CMDLETs you just ran.**
+
+We are able to very easily pull specific information about our "Test1.txt" file because that information is already stored in an object that we can select. We don't have to manipulate the output to give us what we want, PowerShell has already done that for us before we even needed the information.
+
+This is the main benefit of PowerShell in the context of system and network administration. A regular expression or some other form of manipulation is usually necessary when you're trying to turn text into data. PowerShell is powerful because the data is already an object (it has effectively already been parsed and stored by default), so you usually don't need the regular expression in the first place anymore.
+
+### Part 2: Comparing Old Command Line to PowerShell
+
+Just to really drive the point home, let's use a comparison example.
+
+1. Open the Command Line (not PowerShell), and run:
+
+```bash
+sc query
+```
+
+This command outputs all the services that are currently running on your system but it does so with a bunch of extra text that we don't need. So what if we wanted to parse out just the names of the services and their status without all the other extra text?
+
+Unfortunately, accomplishing this in the old Windows Command Line would be fairly complicated. You would need to essentially create a script and use loops and if statements to accomplish it. It would look something like this (**Don't actually enter or run this, it is just to give you an idea**):
+
+```bash
+@echo off
+setlocal
+
+for /f "tokens=1,* delims=:" %%a in ('sc query ^| findstr /R "^SERVICE_NAME: ^STATE"') do (
+    if "%%a"=="SERVICE_NAME" set svc=%%b
+    if "%%a"=="STATE" (
+        echo %%b | find "RUNNING" >nul
+        if not errorlevel 1 echo !svc!
+    )
+)
+```
+
+Obviously this is not ideal as it is fairly complicated and definitely not easily human readable. But with PowerShell, we can grab that information quite easily.
+
+2. Open PowerShell and run the following:
+
+```bash
+Get-Service | Where-Object Status -eq "Running"
+```
+
+The output is already much nicer than what we had before and we can make it better quite easily.
+
+3. Now run:
+
+```bash
+Get-Service | Where-Object Status -eq 'Running' | Select-Object Name, Status
+```
+
+4. We can make it even better by making sure the names are easily recognizable by human eyes:
+
+```bash
+Get-Service | Where-Object Status -eq 'Running' | Select-Object DisplayName, Status
+```
+
+**Screenshot 8: Take a screenshot of the output of the CMDLET you ran above.**
+
+The old Windows Command Line still has its uses. If you are copying or moving files or creating directory structure or examining one that already exists, the Windows Command line is a good tool to do so. But as soon as you get into more complex tasks or data parsing (which is primarily what you will be doing with PowerShell scripting that we will get to in Lab 7), PowerShell will always be the better option.
+
+## Lab 6 Sign Off
+
+You should have 8 screenshots that you have been taking throughout this lab.
+
+Put all 8 of these screenshots into a text document and upload it to the Lab 6 Submission page in Blackboard.

@@ -16,7 +16,7 @@ This week's lab will cover the following:
 - Managing Active Directory users and groups
 - Adding another computer to your domain
 
-## Lab 8 Notes
+## Lab 9 Notes
 
 You will be running 2 VMs at once in this lab. You will likely notice some stuttering and slow down. Please be patient and do not force any VMs off without checking with your teacher.
 

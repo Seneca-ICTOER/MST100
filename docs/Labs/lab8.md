@@ -35,7 +35,7 @@ workgroup called "WORKGROUP".
 
 Let's change that to be more specific to our use case.
 
-1. Logon to your server. Open Server Manager, click Local Server, select the blue WORKGROUP.
+1. Log onto Server1. Open Server Manager, click Local Server, select the blue WORKGROUP.
 2. The System Properties dialog box should appear. Click the Change button. The Computer Name/Domain Changes screen appears allowing you to change your workgroup. In the Workgroup field, type SENECA, and then click OK. You should receive a Welcome to the SENECA Workgroup message. Click OK.
 3. Restart your computer.
 4. Once your computer has restarted, use the same procedure to verify you are in the SENECA workgroup.
@@ -62,8 +62,7 @@ You will see the blue "Add a user" window appear. Add a user with the following 
 
 3. Click "Next". Notice that the user is being added as a "Local Account". Click "Finish".
 4. Back on the "Choose the user you would like to change" screen, select the new CStrife user account.
-5. Click "Change the account type". Note that you can only make a Standard User (default) or Administrator.
-
+5. Click "Change the account type". Note that you can only make a Standard User (default) or Administrator. Leave CStrife as a standard user.
 6. Create another user but make this user an administrator. Give this user account your name (use your Seneca username, whatever is before the @ sign in your Seneca email) and use "P@ssw0rd" for it's password.
 
 **Screenshot 2: Take a screenshot showing the users listed in the User Accounts window (there should be 4 now - 2 admins and 2 regular local users).**
@@ -138,7 +137,7 @@ We can also create users and groups on the command line.
 1. Open an Administrative Command Prompt and enter the following to create a new user:
 
 ```bash
-net user AGainsborough P@ssw0rd /add /comment:”Healer” /expires:never /fullname: "Aerith Gainsborough” /passwordchg:no
+net user AGainsborough P@ssw0rd /add /comment:”Healer” /expires:never /fullname:"Aerith Gainsborough” /passwordchg:no
 ```
 
 2. Now enter the following to add Aerith to the "Avalanche" group:
@@ -177,7 +176,7 @@ net localgroup “Avalanche” AGainsborough /add
 - Members: AGainsborough, CStrife, TLockheart, BWallace
 
 - Group: Shinra
-- Members: CStrife, VValentine,
+- Members: CStrife, VValentine
 
 - Group: Ranged
 - Members: BWallace, VValentine, YKisaragi

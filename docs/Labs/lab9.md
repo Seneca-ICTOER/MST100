@@ -31,7 +31,7 @@ Before we can begin with Active Directory, we need to remove the DNS role that w
 3. Once it is removed, reboot Server1.
 4. Log back in and confirm that he DNS role has been removed.
 5. Using the File Explorer, navigate to your C: drive and create a new directory called "Public".
-6. Share this directory (like you did in Lab 8) and give everyone "Full Control" using "Advanced Sharing".
+6. Share this directory (like you did in Lab 8) and give everyone "Full Control" using "Advanced Sharing". (You don't need to modify the "Security" permissions)
 
 ## Investigation 1: Installing Active Directory
 
@@ -44,12 +44,16 @@ Before we can begin with Active Directory, we need to remove the DNS role that w
 
 ### Part 2: Promote Your Server to a Domain Controller
 
-Installing the Active Directory Domain Services role does not immediately make your server a Domain Controller. More configuration is required.
+A Domain Controller is a Windows Server that manages authentication, authorization, and security for computers and users in a Windows domain.
+
+It as the central authority for a network. Instead of every computer maintaining its own user accounts, all accounts are stored on the domain controller.
+
+Active Directory relies on a Domain Controller but installing the Active Directory Domain Services role does not immediately make your server a Domain Controller. More configuration is required.
 
 1. On the Server Manager, top right corner, you will see a Warning Label (yellow triangle with an exclamation point). Click this icon an select: Promote this server to a domain controller.
-2. Click the radio button to A"dd a new forest", enter your domain name "SenecaID.local" (from the Prelab Chart), and click "Next".
+2. Click the radio button to "Add a new forest", enter your domain name "SenecaID.local" (from the Prelab Chart), and click "Next".
 3. In Domain Controller Options window, for the "Forest functional" and "Domain functional level", select Windows Server 2025. Leave the "Domain Name System (DNS) server" and "Global Catalog" options checked. Assign a password of P@ssw0rd, confirm the password, and click "Next".
-4. Click "Next" in the "DNS Options window.
+4. Click "Next" in the "DNS Options window (you can ignore the yellow warning).
 5. In the Additional Options window, take the defaults and click "Next".
 6. In the Paths window, take the defaults and click "Next".
 7. Review your selections and click "Next".
@@ -59,18 +63,18 @@ Installing the Active Directory Domain Services role does not immediately make y
 
 Congratulations! You have now created a new Active Directory Domain. Notice the login now shows as the DOMAIN\Administrator. You are no longer logging in as a local Administrator, you have leveled up to a Domain Administrator.
 
+**Screenshot 1: Take a screenshot showing you are about to log into your domain**
+
 The Local Users and Groups tool that you used in the previous lab cannot be used to set up users in your domain because they are local to the server where they were created. We must create Domain Users and Groups, using the Active Directory Users and Computers tool. The process is very similar, but you will be creating these users and groups in the AD DS database that is used by all users and computers in the domain, not just on the local server.
 
 ### Part 1: Creating a New Organizational Unit
 
-1. From the Tools menu, select the tool called, Active Directory Users and Computers.
+1. From the Tools menu, select the tool called, "Active Directory Users and Computers".
 2. When the tool opens, you should see the name of your domain in the left pane. Click your domain name to view the contents of the domain in the right pane of the tool. You will see several containers, including a Users
 3. Double-click the Users container to view the contents. (Note: You will see your users from Lab 8 here. While they are listed as users, they cannot be used to log into the domain. We _could_ change their accounts to do so but it is much cleaner to make new accounts. As such, we will be leaving them alone and creating new ones for this lab.)
 4. Right-click your Domain name in the left pane. From the pop-up menu, select "New" and then "Organizational Unit".
 
-We are going to create a new OU for our Head Office and create users, groups and
-computers within that OU. This would allow us to delegate administration of our Head
-Office to a particular group of Administrators at that office.
+We are going to create a new OU for our Head Office and create users, groups and computers within that OU. This would allow us to delegate administration of our Head Office to a particular group of Administrators at that office.
 
 5. Type in Head Office for the name of the OU, and click OK. The Head Office OU should appear in your list.
 
@@ -131,19 +135,21 @@ Creating Domain Global Groups is the same as Domain Local Groups. Typically, Glo
 
 **Check-in:** At this point you should have 3 Global Groups and 3 Domain Local Groups created in the Head Office OU.
 
+**Screenshot 2: Take a screenshot showing the contents of your Head Office OU**
+
 ### Part 6: Modifying Group Membership
 
 We will add users to a Global Group and then place the Global Group into a Domain Local Group.
 
 1. Click the "Head Office" OU in the left pane so the contents of Head Office are displayed in the right pane.
 2. Double-click your "HO-SalesReps" Global Group, and the groups Properties dialog will appear.
-3. Click the "Members" tab, then click "Add" to add users to the Global Group. Click
-   the Advanced button and then select Object Types. Ensure that only Users has a checkmark beside it. Then click Find Now. All the user accounts should appear in the list. These user accounts will be a combination of Local Users in the Users folder and Domain Users which we have created in the Head Office OU.
+3. Click the "Members" tab, then click "Add" to add users to the Global Group. Click the Advanced button and then select "Object Types". Ensure that only "Users" has a checkmark beside it. Then click Find Now. All the user accounts should appear in the list. These user accounts will be a combination of Local Users in the Users folder and Domain Users which we have created in the Head Office OU.
 4. Select any 3 users from the "Head Office OU" (do NOT select any users from Lab 8), then click "OK". Click "OK" and the users should be added to your Global Group.
-5. Now click the "Member" Of tab, and select "Add" to Add this Global Group to a Domain Local Group. Click Advanced, then Object Types. Make sure only Groups is selected. Then Find Now to see a list that contains only groups.
-6. Find your Domain Local Group called "SalesReps". Select it and then click "OK",
-   then "OK", then OK again on the "HO-SalesReps" Properties dialog box.
-7. To verify that you have added your Global Group to the Domain Local Group double-click your SalesReps Local Group and click the Members Tab to see the Global Group listed.
+5. Now click the "Member Of" tab, and select "Add" to Add this Global Group to a Domain Local Group. Click Advanced, then Object Types. Make sure only Groups is selected. Then Find Now to see a list that contains only groups.
+6. Find your Domain Local Group called "SalesReps". Select it and then click "OK", then "OK", then OK again on the "HO-SalesReps" Properties dialog box.
+7. To verify that you have added your Global Group to the Domain Local Group double-click your SalesReps Local Group and click the "Members" Tab to see the Global Group listed.
+
+**Screenshot 3: Take a screenshot showing the Members and Members Of tabs of the HO-SalesReps group**
 
 ## Investigation 3: Adding a Windows Client to your Domain
 
@@ -175,10 +181,10 @@ Let's try logging in as another user.
 13. This time log in as "ksmith". This time you don't need to provide the domain as this machine is already connected to it. Once again, Windows will go through its first time login script and you will land on the Windows desktop.
 14. Check "This PC" again. You should see the network share again, this time under "ksmith".
 
-**Screenshot 7: Take a screenshot showing the output of the above commands**
+**Screenshot 4: Take a screenshot showing ksmith's Public share directory**
 
 ## Lab 9 Sign Off
 
-You should have 7 screenshots that you have been taking throughout this lab.
+You should have 4 screenshots that you have been taking throughout this lab.
 
-Put all 7 of these screenshots into a text document and upload it to the Lab 9 Submission page in Blackboard.
+Put all 4 of these screenshots into a text document and upload it to the Lab 9 Submission page in Blackboard.

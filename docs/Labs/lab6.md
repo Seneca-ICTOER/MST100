@@ -424,7 +424,7 @@ Get-ChildItem .\Test1.txt | Select-Object CreationTime, LastAccessTime
 
 We are able to very easily pull specific information about our "Test1.txt" file because that information is already stored in an object that we can select. We don't have to manipulate the output to give us what we want, PowerShell has already done that for us before we even needed the information.
 
-This is the main benefit of PowerShell in the context of system and network administration. A regular expression or some other form of manipulation is usually necessary when you're trying to turn text into data. PowerShell is powerful because the data is already an object (it has effectively already been parsed and stored by default), so you usually don't need the regular expression in the first place anymore.
+This is the main benefit of PowerShell in the context of system and network administration. A regular expression or some other form of manipulation is usually necessary when you're trying to turn text into data. PowerShell is powerful because the data is already an object (it has effectively already been parsed and stored by default), so you usually don't need to manipulate the text at all.
 
 ### Part 2: Comparing Old Command Line to PowerShell
 

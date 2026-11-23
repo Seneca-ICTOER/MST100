@@ -26,7 +26,7 @@ You will be asked to take several screenshots for each part of this assignment.
 
 ### Part A Tasks:
 
-1. Create a new directory in the "MST100" directory on your hard drive. Name tis directory "A1Client".
+1. Create a new directory in the "MST100" directory on your hard drive. Name this directory "A1Client".
 2. Create a new virtual machine using the Windows 11 ISO file. Use the same virtual hardware setup as you did with your "Client1" VM. Give the VM and the Computer Name the name "A1Client". Save this virtual machine in the "A1Client" directory you just created. Your initial username should be your Seneca ID.
 3. After the VM has been installed, install VMware Tools.
 4. Next, add a local user to "A1Client" named "hheim" with a password of "P@ssw0rd". This will look a little different than doing it on a server. Make sure to do this **without** creating a Microsoft account.

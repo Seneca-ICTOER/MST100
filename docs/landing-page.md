@@ -25,9 +25,7 @@ Learning effectively in this course will mean attending the weekly lectures and 
 
 ## How to run this course
 
-This course will be run primarily on 3 virtual machines that you install using VMWare Workstation Pro. This software is installed locally on most lab computers throughout Seneca's Newnham campus. Lab 2 will take you through the necessary steps to get this up and running but there are a few things to keep in mind.
-
-First, you will need an external hard drive for this course.
+This course will be run primarily on 3 virtual machines that you install using VMWare Workstation Pro. This software is installed locally on most lab computers throughout Seneca's Newnham campus. Lab 2 will take you through the necessary steps to get this up and running but you will need to purchase an external hard drive for this course on which to install those VMs.
 
 It is recommended you purchase one that is at least 500GB but you can technically get by with 250GB.
 Be careful about which hard drive you purchase. There are many sub-par digital storage manufacturers out there that should be avoided. Generally you will want to stick with known brands (such as Samsung, Western Digital/SanDisk, Seagate/LaCie, Kingston, Toshiba) but be sure to also do some research and check reviews to make sure you are getting something that will last. Nothing is worse than having your hard drive fail in the middle of the semester.

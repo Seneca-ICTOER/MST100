@@ -7,6 +7,8 @@ description: Practical Assignment for MST100
 
 # Practical Lab Assignment for MST100
 
+- **Note** - Do not start this assignment until you have completed all labs in MST100.
+
 ## Overview
 
 For this assignment, you will be creating a new Client VM and adding it to the domain that you created in Lab 9. You will also be creating a set of users, groups, and share directories for the new users. These will all be connected to Active Directory and the domain you set up in Lab 9.

@@ -50,7 +50,7 @@ Notice that we are given a lot more information. So what are we looking for?
 
 There are several pieces of information here that are useful to us. The result of the first command we ran gives us the IP address and its subnet mask, as well as the default gateway (or the router/device it looks to in order to send data outside of the local network).
 
-The second command gives us more details about the networking information associate with this machine. Specifically for us, we are interested in the DHCP information and the DNS information.
+The second command gives us more details about the networking information associated with this machine. Specifically for us, we are interested in the DHCP information and the DNS information.
 
 The DNS server is the server that is providing translations for IP addresses to Fully Qualified Domain Names and vice versa. We will be creating our own DNS server later on in this lab.
 

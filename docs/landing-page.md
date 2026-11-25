@@ -32,7 +32,9 @@ Be careful about which hard drive you purchase. There are many sub-par digital s
 
 ## Submitting Labs
 
-All the labs in this course will be submitted via a submission link in Blackboard. Except for Lab 1 and Lab 5, you will be submitting a document that contains screenshots showing proof of steps you have completed in the labs. Submissions for labs are "All or Nothing" - you must submit all screenshots to get the lab mark. If you are missing any screenshots you will receive a mark of 0 for the lab.
+All the labs in this course will be submitted via a submission link in Blackboard. Except for Lab 1 and Lab 5, you will be submitting **a document that contains screenshots** showing proof of steps you have completed in the labs. Submissions for labs are "All or Nothing" - you must submit all screenshots to get the lab mark. If you are missing any screenshots you will receive a mark of 0 for the lab.
+
+Do not upload screenshots one at a time. They MUST be organized in a single document and labeled accordingly to receive your lab marks.
 
 Screenshots MUST be taken using a screenshot tool in your computer (the snipping tool is your best bet in Windows) and should show which VM is being used for the screenshot. **Pictures of the screen taken with your phone will not be accepted**. All screenshots must have a label either above or underneath describing what the screenshot is showing.
 
@@ -55,6 +57,8 @@ If you DO decide to use a laptop for the course work, make sure you stick with y
 Ultimately this course has been designed and tested to work with the setup we have in the labs - by plugging a hard drive into the lab machine, installing your VMs to that hard drive, and running them from the hard drive using VMware on the Seneca lab computer. Using any other method is at the student's discretion. The teacher will not be able to help you with your own laptop and any damage you cause to it will be on you.
 
 Again, **YOU HAVE BEEN WARNED!**
+
+If you do want to use your own laptop, you can find instructions for installing VMWare onto it here: [Personal VMWare Installation](https://seneca-ictoer.github.io/OSM620/Extra%20Resources/lab1.1)
 
 ## Reference Sheet Policy
 
